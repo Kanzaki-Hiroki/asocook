@@ -8,7 +8,11 @@
     <title>ASO COOK</title>
 </head>
 <body>
-<header></header>
+<header>
+    <form action="{{}}">
+        <input type="search" name="search" placeholder="キーワード検索">
+    </form>
+</header>
 <aside></aside>
 <main></main>
 <footer></footer>
