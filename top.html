@@ -5,31 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style.scss">
+    <!-- <link rel="stylesheet" href="css/style.scss"> -->
     <title>トップ</title>
 </head>
 <body>
-    <header>
-        <div id="">
-            <p class="logo">
-                <img src="img/logo.png" alt="システムロゴ">
-            </p>
+    <div class="logo">
+        <img src="img/logo.png" alt="システムロゴ">
+    </div>
+
+    <div class="navi">
+        <form method="get" action="#" class="search_container">
+            <input type="text" size="25" placeholder="キーワード検索">
+            <input type="submit" value="&#xf002">
+        </form>
+        <div class="hamburger-menu">
+            <form action="search_results.html" method="post">
+                <input id="menu__toggle" type="checkbox" name="keyword"></form> <!--キーワード検索ボックス-->
+            <label class="menu__btn" for="menu__toggle">
+            <span></span>
+            </label>
+            <ul class="menu__box">
+                <li><a class="menu__item" href="#">Home</a></li>
+                <li><a class="menu__item" href="#">About</a></li>
+                <li><a class="menu__item" href="login.php">ログイン</a></li>
+                <!-- <li><a class="menu__item" href="#">Contact</a></li>
+                <li><a class="menu__item" href="#">Twitter</a></li> -->
+            </ul>
         </div>
-    </header>
-    <form method="get" action="#" class="search_container">
-        <input type="text" size="25" placeholder="キーワード検索">
-        <input type="submit" value="&#xf002">
-    </form>
-    <label>
-        <input type="checkbox">
-        <span class="menu"> <span class="hamburger"></span> </span>
-        <ul>
-            <li> <a href="#">Home</a> </li>
-            <li> <a href="#">About</a> </li>
-            <li> <a href="#">Contact</a> </li>
-        </ul>
-        </label>
-    <!-- <main></main> -->
+    </div>
+
     <footer></footer>
 </body>
 </html>

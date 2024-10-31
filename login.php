@@ -16,9 +16,14 @@
         </div>
     </header>
     <h2>ログイン</h2>
-    <form action="#" method="post">
+    <form action="id_check.php" method="post">
         メールアドレス <br>
-        <input type="text" name="name"><br>
+        <input type="text" name="log_id"><br>
+        <?php
+        if(isset($login_false)){
+            echo '<span style="color: red">メールアドレスまたはパスワードが間違っています</span>';
+        }
+        ?>
         パスワード <br>
         <input type="text" name="pass"><br>
         <p><input type="submit" value="ログインする"></p>
