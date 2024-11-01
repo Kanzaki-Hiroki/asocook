@@ -10,6 +10,9 @@
     <div class="logo">
         <img src="img/logo.png" alt="システムロゴ">
     </div>
-    
+    <div class="content">
+        <p>完了しました</p>
+        <button class="btn-home" onclick="window.location.href='shiharaikanryo.php'">ホームページへ戻る</button>
+    </div>
 </body>
 </html>

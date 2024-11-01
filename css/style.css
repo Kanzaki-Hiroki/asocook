@@ -11,4 +11,23 @@
     max-width: 1000px;
     height: auto;
   }
-   
+  .content {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+/* 按鈕樣式 */
+.btn-home {
+    margin-top: 20px;
+    background-color: #ffea65;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-home:hover {
+    background-color: #ffd54f;
+}  
