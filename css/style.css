@@ -1,0 +1,14 @@
+/* システムロゴ */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    background-color: #fff85a;
+  }
+  .logo img{
+    /* width: 100%; */
+    max-width: 1000px;
+    height: auto;
+  }
+   
