@@ -12,7 +12,7 @@ if(isset($_POST['keyword'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>トップ</title>
+    <title>検索結果</title>
 </head>
 <body>
     <header>
@@ -23,7 +23,7 @@ if(isset($_POST['keyword'])){
         </div>
     </header>
     <div class="navi">
-        <form method="get" action="#" class="search_container">
+        <form method="get" action="search_results.php" class="search_container">
             <input type="text" size="25" placeholder="キーワード検索">
             <input type="submit" value="&#xf002">
         </form>
@@ -54,29 +54,12 @@ if(isset($_POST['keyword'])){
     foreach($results as $result){
         echo '<p>',$result['item_name'],'</p>';
         echo '<p>',$result['hanbai_tanka'],'</p>';
-        ?>
-        <!-- //ここにカート追加機能,js必要かも -->
-        <div class="container mt-2">
-        <label for="number-of-unit" id="label-number-of-unit">個数</label>
-        <div class="input-group">
-        <div class="input-group-prepend">
-        <button type="button" aria-label="減らす" aria-describedby="label-number-of-unit" class="btn btn-outline-dark btn-number rounded-0" data-type="minus" data-field="unit">
-        -
-        </button>
-        </div><!-- end .input-group-prepend -->
-        <input type="number" id="number-of-unit" name="unit" value="1" min="0" max="100" class="form-control input-number border-dark">
-        <div class="input-group-append">
-        <button type="button" aria-label="増やす" aria-describedby="label-number-of-unit" class="btn btn-outline-dark btn-number rounded-0" data-type="plus" data-field="unit">
-        +
-        </button>
-        </div><!-- end .input-group-append -->
-        </div><!-- end .input-group -->
-        <!-- 値の変更をスクリーンリーダーに伝達するライブリージョン。視覚的に冗長なので非表示にする。 -->
-        <div id="output-number-of-unit" class="sr-only" role="status" aria-live="polite"></div>
-
-        </div><!-- end .container -->
-    <?php
-    echo '<input type="submit" value="カートに追加">';
+        //<!-- //ここにカート追加機能,js必要かも -->
+        echo '<form action="#">';
+            echo '<input type="hidden" name="user" value="',$result['item_id'],'">';
+            echo '数量<input type="text"　size="2" name="kosuu" value="1">';
+            echo '<input type="submit" value="カートに追加">';
+        echo '</form>';
     } //forearchの終わり
     ?>
     <footer></footer>

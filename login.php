@@ -20,6 +20,7 @@
         メールアドレス <br>
         <input type="text" name="log_id"><br>
         <?php
+        require_once('id_check.php');
         if(isset($login_false)){
             echo '<span style="color: red">メールアドレスまたはパスワードが間違っています</span>';
         }
