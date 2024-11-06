@@ -17,11 +17,20 @@
     font-size: 24px;
 }
 
+/* 將按鈕置中的容器 */
+.center-container {
+  display: flex;
+  flex-direction: column;          /* 垂直排列按鈕 */
+  align-items: center;             /* 水平置中 */
+  justify-content: center;         /* 垂直置中 */
+  height: 100vh;                   /* 使容器高度為視窗高度 */
+}
+
 /* 按鈕樣式 */
 .btn-home {
-  padding: 0;               /* 去除按鈕內邊距 */
-  margin-top: 20px;
-  background-color: transparent; /* 按鈕背景設為透明 */
+  padding: 0;
+  margin: 10px 0;                  /* 上下間距，讓按鈕之間有間隔 */
+  background-color: transparent;
   border: none;
   cursor: pointer;
   display: flex;
@@ -31,18 +40,18 @@
 
 /* 正方形的黃色區域 */
 .square-content {
-  width: 150px;                  /* 固定寬度 */
-  aspect-ratio: 1 / 1;           /* 保持正方形比例 */
+  width: 150px;
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffea65;     /* 背景設為黃色 */
+  background-color: #ffea65;
   font-size: 18px;
-  color: #000;                   /* 文字顏色 */
+  color: #000;
   border-radius: 5px;
   transition: background-color 0.3s;
 }
 
 .btn-home:hover .square-content {
-  background-color: #ffd54f;     /* 懸停時改變黃色區域顏色 */
+  background-color: #ffd54f;
 }

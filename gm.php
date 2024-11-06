@@ -10,11 +10,13 @@
     <div class="logo">
         <img src="img/logo.png" alt="システムロゴ">
     </div>
+<br><br><br><br>
     <div class="content">
     <button class="btn-home" onclick="window.location.href=''">
         <span class="square-content">商品管理</span>
     </button>
 </div>
+<br><br><br><br>
 <div class="content">
     <button class="btn-home" onclick="window.location.href=''">
         <span class="square-content">ユーザー管理</span>
