@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>アカウント登録</title>
+</head>
+<body>
+    <div class="logo">
+        <img src="img/logo.png" alt="システムロゴ">
+    </div>
+    <h1>アカウント登録</h1>
+    <div id="account_form">
+        <form action="check_info.php" method="post">
+            <p>姓 <br><input type="text" name="last_name" v-model="lname"><br>
+            <span v-if="!checkLname" class="alert_message">姓が入力されていません</span></p>
+            <p>名 <br><input type="text" name="first_name" v-model="fname"><br>
+            <span v-if="!checkFname" class="alert_message">名が入力されていません</span></p>
+
+            <p>メールアドレス<br><input type="email" name="email" v-model="email"><br>
+            <span v-if="!checkEmail" class="alert_message">メールアドレスを正しく入力してください</span></p>
+
+            <p>パスワード<br><input type="password" name="pass" v-model="pass"><br>
+            <span v-if="!checkPassreg" class="alert_message">半角英数字6文字以上12文字以内で入力してください</span></p>
+            <p>パスワード再確認<br><input type="password" name="re_pass" v-model="re_pass"><br>
+            <span v-if="passwordMismatch" class="alert_message">パスワードが一致しません</span></p>
+
+            <p>住所<br><textarea name="address" v-model="address" cols="22" rows="3"></textarea></p>
+            <p>電話番号<br><input type="tel" name="tel" v-model="tel" placeholder="ハイフンなしで入力してください"><br>
+            <span v-if="!checkTel" class="alert_message"></span></p>
+
+            <input v-if="checkAllinput" type="submit" value="確認画面に進む"> <!--全ての項目が入力され各条件を満たしたとのみ押下可能-->
+            <input v-else disabled type="submit" value="確認画面に進む">
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./script/script.js"></script>
+</body>
+</html>

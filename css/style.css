@@ -123,3 +123,8 @@
   max-width: 1000px;
   height: auto;
 }
+
+.alert_message {
+  color: red;
+  font-size: 0.7em;
+}
