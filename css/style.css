@@ -1,132 +1,42 @@
 /* システムロゴ */
 .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto;
-    background-color: #fff85a;
-  }
-  .logo img{
-    /* width: 100%; */
-    max-width: 1000px;
-    height: auto;
-  }
-  .content {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 24px;
-}
-
-/* 將按鈕置中的容器 */
-.center-container {
   display: flex;
-  flex-direction: column;          /* 垂直排列按鈕 */
-  align-items: center;             /* 水平置中 */
-  justify-content: center;         /* 垂直置中 */
-  height: 100vh;                   /* 使容器高度為視窗高度 */
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  background-color: #fff85a;
+}
+.logo img{
+  /* width: 100%; */
+  max-width: 1000px;
+  height: auto;
 }
 
-/* 按鈕樣式 */
+/* 主要內容區域 */
+.content {
+  text-align: center; /* 將文字置中 */
+  margin: 50px auto; /* 垂直與水平居中 */
+  padding: 20px; /* 內距 */
+  max-width: 600px; /* 最大寬度 */
+  background-color: #f8f9fa; /* 淡灰色背景 */
+  border-radius: 8px; /* 圓角 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加陰影 */
+}
+
+/* 返回首頁按鈕 */
 .btn-home {
-  padding: 0;
-  margin: 10px 0;                  /* 上下間距，讓按鈕之間有間隔 */
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* 正方形的黃色區域 */
-.square-content {
-  width: 150px;
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffea65;
-  font-size: 18px;
-  color: #000;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.btn-home:hover .square-content {
-  background-color: #ffd54f;
-}
-
-/* 通用重置 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* 基本字體與頁面設置 */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  padding: 20px;
-}
-
-h1 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* 通用表格樣式 */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-thead th {
-  background-color: #fffa8b;
-  color: #333;
-  padding: 10px;
-  font-weight: bold;
-  text-align: left;
-}
-
-tbody td, tbody th {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-/* 最後一行底部無邊框 */
-tbody tr:last-child td {
-  border-bottom: none;
-}
-
-/* 修改按鈕樣式 */
-.edit-button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.edit-button:hover {
-  background-color: #45a049;
-}
-
-/* 搜索表格額外樣式 */
-.search-table {
-  width: 50%;
-  margin-bottom: 20px;
-}
-
-.product-table th, .product-table td {
+  padding: 10px 20px; /* 內距 */
+  font-size: 1em; /* 文字大小 */
+  color: #fff; /* 文字顏色為白色 */
+  background-color: #007bff; /* 按鈕背景色（藍色） */
+  border: none; /* 移除邊框 */
+  border-radius: 4px; /* 圓角 */
+  cursor: pointer; /* 游標變成點擊手型 */
+  transition: background-color 0.3s ease; /* 背景顏色過渡 */
   text-align: center;
 }
+
+.btn-home:hover {
+  background-color: #0056b3; /* 滑鼠懸停時的按鈕顏色 */
+}
+

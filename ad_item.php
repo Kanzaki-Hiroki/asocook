@@ -18,42 +18,43 @@
         <button class="logout-button">ログアウト</button>
     </div>
     <h1>商品検索</h1>
+    <?php
+        $pdo=new PDO('mysql:host=mysql305.phy.lolipop.lan;
+                    dbname=LAA1557210-php2024;charset=utf8',
+                    'LAA1557210',
+                    'Pass1130');
+        
+            
 
-<table class="search-table">
-    <thead>
-        <tr>
-            <th scope="col">商品名</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>売価</td>
-            <td>在庫</td>
-        </tr>
-    </tbody>
-</table>
+            $sql = 'select * from movies';
 
-<table class="product-table">
-    <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">画像</th>
-            <th scope="col">商品名</th>
-            <th scope="col">原価</th>
-            <th scope="col">在庫</th>
-            <th scope="col">変更</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>画像</td>
-            <td>メークイン</td>
-            <td>150</td>
-            <td>200</td>
-            <td><button class="edit-button">変更</button></td>
-        </tr>
-    </tbody>
-</table>
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+
+            echo '<table border = "|">';
+
+            echo '<tr><th>ID</th><th>画像</th><th>商品名</th><th>売価</th><th>原価</th><th>在庫</th><th>在庫</th></tr>';
+
+            foreach ($stmt as $row){
+                echo '<tr>';
+                echo '<td>', $row['id'], '</td>';
+                echo '<td>', $row['title'], '</td>';
+                echo '<td>', $row['release_year'], '</td>';
+                echo '<td>', $row['genre'], '</td>';
+                echo '<td>', $row['genre'], '</td>';
+                echo '<td>', $row['genre'], '</td>';
+                echo '<form action="ad_item_data.php" method="post" style="display:inline">';
+                echo '<input type="hidden" name="id" value="', $row['id'], '">';
+                echo '<input type="hidden" name="title" value="', $row['title'], '">';
+                echo '<input type="hidden" name="release_year" value="', $row['release_year'], '">';
+                echo '<input type="hidden" name="genre" value="', $row['genre'], '">';
+                echo '<td><input type="submit" value="詳細"></td>';
+                echo '</form>';
+                echo '</tr>';
+            }
+
+            echo '</table>';
+        $pdo = null;
+    ?>
 </body>
 </html>
