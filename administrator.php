@@ -12,13 +12,13 @@
     </div>
 <br><br><br><br>
     <div class="content">
-    <button class="btn-home" onclick="window.location.href=''">
+    <button class="btn-home" onclick="window.location.href='ad_item.php'">
         <span class="square-content">商品管理</span>
     </button>
 </div>
 <br><br><br><br>
 <div class="content">
-    <button class="btn-home" onclick="window.location.href=''">
+    <button class="btn-home" onclick="window.location.href='user_kannri.php'">
         <span class="square-content">ユーザー管理</span>
     </button>
 </div>

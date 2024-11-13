@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-<?php
-        $pdo=new PDO('mysql:host=mysql305.phy.lolipop.lan;
-                    dbname=LAA1557210-php2024;charset=utf8',
-                    'LAA1557210',
-                    'Pass1130');
+    <?php
+        $pdo = new PDO('mysql:host=mysql309.phy.lolipop.lan;
+        dbname=LAA1557221-aso2301382;charset=utf8',
+        'LAA1557221',
+        'aso12345');
         
-            if(isset($_POST['id'])){
-                $id = $_POST['id'];
+        
+        if(isset($_POST['item_id'])){
+            $item_name = $_POST['item_name'];
+            $hanbai_tanka = $_POST['hanbai_tanka'];
+            $stock = $_POST['stock'];
+            $url = $_FILES['url']["name"];
+            
+            $sql = $pdo->prepare('insert into item(item_id, item_name, hanbai_tanka, url, stock) values(?, ?, ?, ?, ?)');
+            $result = $sql->execute([$name, $comment, $file_names]);
+            
+            if($result){
+                echo 'データが正常に挿入されしました<br>';
             }else{
-                $id = null;
+                echo 'データの挿入に失敗しました<br>';
             }
-
-            if(isset($_POST['title'])){
-                $title = $_POST['title'];
+        }
+        
+            $file = 'upload/' . basename($_FILES['url']['name']);
+            if(move_uploaded_file($_FILES['url']['tmp_name'], $file)){
+                
             }else{
-                $title = null;
+                echo 'アップロードに失敗しました。<br>';
             }
-
-            if(isset($_POST['genre'])){
-                $genre = $_POST['genre'];
-            }else{
-                $genre = null;
-            }
-            if(isset($_POST['release_year'])){
-                $release_year = $_POST['release_year'];
-            }else{
-                $release_year = null;
-            }
-
+        $pdo = null;
+        header("Location:ad_item.php");
     ?>
+   
 </body>
 </html>
