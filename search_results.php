@@ -53,15 +53,20 @@ if(isset($_POST['keyword'])){
     $results = $sql->fetchAll();
     foreach($results as $result){
         echo '<p>',$result['item_name'],'</p>';
-        echo '<p>',$result['hanbai_tanka'],'</p>';
+        echo '<p>￥',$result['hanbai_tanka'],'</p>';
         //<!-- //ここにカート追加機能,js必要かも -->
-        echo '<form action="',$_SERVER['PHP_SELF'],'">';
+        echo '<form action="',$_SERVER['PHP_SELF'],'" class="add-to-cart-form" data-item-id="', $result['item_id'], '" data-item-name="', $result['item_name'], '" data-item-price="', $result['hanbai_tanka'], '" method=post>';
             echo '<input type="hidden" name="user" value="',$result['item_id'],'">';
-            echo '数量<input type="text" size="2" name="amount" value="1">';
-            echo '<input type="submit" value="カートに追加">';
+            echo '数量<input type="text" size="2" name="amount" value="1" min="1" max="99" class="amount-input">';
+            echo '<input type="submit" class="add-to-cart-btn" value="カートに追加">';
         echo '</form>';
     } //foreachの終わり
     ?>
+<form id="cart-form" method="post" action="check_cart.php">
+    <!-- カート情報はhiddenフィールドとして送信 -->
+    <input type="hidden" name="cart_data" id="cart-data">
+    <button type="submit">レジに進む</button>
+</form>
     <footer></footer>
 </body>
 </html>

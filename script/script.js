@@ -1,43 +1,50 @@
-new Vue({
-    el: '#account_form',
-    data: {
-        lname:'',
-        fname:'',
-        email:'',
-        pass:'',
-        re_pass:'',
-        address:'',
-        tel:''
-    },
+$(document).ready(function() {
+    // カートに商品を追加する処理
+    $('.add-to-cart-btn').click(function() {
+        var form = $(this).closest('form');
+        var itemId = form.data('item-id');
+        var itemName = form.data('item-name');
+        var itemPrice = form.data('item-price');
+        var amount = form.find('.amount-input').val();
 
-    // computed:{
+        // ローカルストレージにカートがすでにあるか確認
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // },
-    computed:{
-        checkLname(){
-            return this.lname;
-        },
-        checkFname(){
-            return this.fname;
-        },
-        checkEmail(){
-            regex = /^(?!.*[._-]{2})[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-            return regex.test(this.email);
-        },
-        checkPassreg(){
-            regex = /^[a-zA-Z0-9]{6,12}$/; //半角英数字6～12文字
-            return regex.test(this.pass);
-        },
-        passwordMismatch(){
-            return this.pass && this.re_pass && this.pass !== this.re_pass;
-        },
-        checkTel(){ //10桁or11桁の電話番号
-            regex = /^\d{10,11}$/;
-            return regex.test(this.tel);
-        },
-        checkAllinput(){ //上記全ての条件に当てはまるか判定
-            // return this.lname && this.fname && this.email && this.pass && this.re_pass && this.address && this.tel;
-            return this.checkLname && this.checkFname && this.checkEmail && this.checkPassreg && !this.passwordMismatch && this.address && this.checkTel;
+        // カートにアイテムを追加
+        var item = {
+            id: itemId,
+            name: itemName,
+            price: itemPrice,
+            amount: parseInt(amount)
+        };
+
+        // アイテムがすでにカートにある場合は数量を更新
+        var itemExists = false;
+        for (var i = 0; i < cart.length; i++) {
+            if (cart[i].id === itemId) {
+                cart[i].amount += item.amount;
+                itemExists = true;
+                break;
+            }
         }
-    }
+
+        // アイテムがカートにない場合は新規追加
+        if (!itemExists) {
+            cart.push(item);
+        }
+
+        // ローカルストレージにカートを保存
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // カートに追加完了のメッセージを表示
+        alert(itemName + ' がカートに追加されました。');
+    });
+
+    // フォーム送信時にカートデータをPHPに送信
+    $('#cart-form').submit(function(e) {
+        if (cart.length === 0) {
+            alert('カートに商品がありません！');
+            e.preventDefault();  // カートが空の場合、送信しない
+        }
+    });
 });

@@ -20,7 +20,7 @@ dbname=LAA1557221-aso2301382;charset=utf8',
 'LAA1557221',
 'aso12345');
 
-// foreach($pdo->query('select * from user') as $row){
+// foreach($pdo->query('select * from user where email = aaaaaa.s.asojuku.ac.jp, user_pass = ssssss') as $row){
 //     echo $row['email'], '<br>';
 //     echo $row['user_pass'];
 // }
