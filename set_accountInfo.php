@@ -30,10 +30,10 @@ if(isset($_POST['pass'])){ //パスワード
     $check_pass = false;
     header('Location:create_account.html');
 }
-if(!isset($_POST['re_pass'])){ //確認用パスワード
-    $equal_pass = false;
-    header('Location:create_account.html');
-}
+// if(!isset($_POST['re_pass'])){ //確認用パスワード
+//     $equal_pass = false;
+//     header('Location:create_account.html');
+// }
 
 if(isset($_POST['address'])){ //住所
     $address = htmlspecialchars($_POST['address']);
@@ -49,15 +49,17 @@ if(isset($_POST['tel'])){ //電話番号
 }
 
 //DB
-$pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;
-dbname=LAA1557221-php2024;charset=utf8',
+$pdo = new PDO('mysql:host=mysql309.phy.lolipop.lan;
+dbname=LAA1557221-aso2301382;charset=utf8',
 'LAA1557221',
 'aso12345');
 
-$sql = $pdo->prepare('');
-$result = $sql->execute([]);
+$sql = $pdo->prepare('insert into user  values(?, ?, ?, ?, ?, ?)');
+$name = $lname . ' '. $fname;
+$datetime = date("Y-m-d H:i:s");
+$result = $sql->execute([$email, $name, $pass, $tel, $address, $datetime]);
 if($result){
-    //echo 'データが正常に挿入されました。<br>';
+    header('Location: top.html');
 }
 $pdo = null;
 
