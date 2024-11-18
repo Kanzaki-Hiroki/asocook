@@ -19,7 +19,7 @@
         <a href="logout.php"><button class="logout_button">ログアウト</button></a>
     </div>
     <h1>新規追加</h1>
-    <form action="ad_item_data.php" method="post" enctype="multipart/form-data">
+    <form action="new_item_db.php" method="post" enctype="multipart/form-data">
         <table border="|">
             <tr>
                 <tr><td>商品名</td><td><input type="text" name="item"></td></tr>
