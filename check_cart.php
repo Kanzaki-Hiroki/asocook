@@ -1,16 +1,25 @@
 <?php
-// POSTで送信されたカートデータを取得
-if (isset($_POST['cart_data'])) {
-    $cart_data = json_decode($_POST['cart_data'], true); // JSON文字列を配列にデコード
-
-    // 受け取ったカートデータの内容を表示（デバッグ用）
-    echo '<pre>';
-    print_r($cart_data);
-    echo '</pre>';
-
-    // ここでカート情報をデータベースに保存したり、注文処理を行ったりします
-
-} else {
-    echo 'カートデータが送信されていません。';
-}
+session_start();
 ?>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<header>
+        <div id="">
+            <p class="logo">
+                <img src="img/logo.png" alt="システムロゴ">
+            </p>
+        </div>
+    </header>
+</body>
+</html>
+
+<!-- echo 'a';
+// echo $_SESSION['cart'];
+?> -->

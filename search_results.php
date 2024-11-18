@@ -3,6 +3,7 @@ session_start();
 if(isset($_POST['keyword'])){
     $_SESSION['key'] = htmlspecialchars($_POST['keyword']);
 }
+$_SESSION['cart'];
 ?>
 
 <!DOCTYPE html>
@@ -48,26 +49,24 @@ if(isset($_POST['keyword'])){
     'LAA1557221',
     'aso12345');
 
-    $sql = $pdo->prepare('select * from item where item_name LIKE ?');
+    $sql = $pdo->prepare('select * from item where item_name = ? or ');//DBの商品テーブルにメタタグ列を追加、ここでor検索
     $sql->execute(['%'.$_SESSION['key'].'%']);
     $results = $sql->fetchAll();
     foreach($results as $result){
         echo '<p>',$result['item_name'],'</p>';
         echo '<p>￥',$result['hanbai_tanka'],'</p>';
-        //<!-- //ここにカート追加機能,js必要かも -->
-        echo '<form action="',$_SERVER['PHP_SELF'],'" class="add-to-cart-form" data-item-id="', $result['item_id'], '" data-item-name="', $result['item_name'], '" data-item-price="', $result['hanbai_tanka'], '" method=post>';
-            echo '<input type="hidden" name="user" value="',$result['item_id'],'">';
-            echo '数量<input type="text" size="2" name="amount" value="1" min="1" max="99" class="amount-input">';
-            echo '<input type="submit" class="add-to-cart-btn" value="カートに追加">';
+        echo '<form action="addCart.php" method=post>';
+            echo '<input type="hidden" name="item_id" value="',$result['item_id'],'">';
+            echo '数量<input type="text" size="2" name="amount" value="1" min="1" max="99"';
+            echo '<input type="submit" value="カートに追加">';
         echo '</form>';
     } //foreachの終わり
     ?>
-<form id="cart-form" method="post" action="check_cart.php">
+<form method="post" action="check_cart.php">
     <!-- カート情報はhiddenフィールドとして送信 -->
-    <input type="hidden" name="cart_data" id="cart-data">
-    <button type="submit">レジに進む</button>
+    <input type="hidden" name="cart" id="cart-data">
+    <input type="submit" value="レジに進む"></input>
 </form>
-<script src="./script/script.js"></script>
     <footer></footer>
 </body>
 </html>
