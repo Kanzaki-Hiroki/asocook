@@ -3,7 +3,7 @@ session_start();
 if(isset($_POST['keyword'])){
     $_SESSION['key'] = htmlspecialchars($_POST['keyword']);
 }
-$_SESSION['cart'];
+// $_SESSION['cart'];
 ?>
 
 <!DOCTYPE html>
@@ -49,8 +49,8 @@ $_SESSION['cart'];
     'LAA1557221',
     'aso12345');
 
-    $sql = $pdo->prepare('select * from item where item_name = ? or ');//DBの商品テーブルにメタタグ列を追加、ここでor検索
-    $sql->execute(['%'.$_SESSION['key'].'%']);
+    $sql = $pdo->prepare('select * from item where item_name = ?');//DBの商品テーブルにメタタグ列を追加、ここでor検索
+    $sql->execute([$_POST['keyword']]);
     $results = $sql->fetchAll();
     foreach($results as $result){
         echo '<p>',$result['item_name'],'</p>';
@@ -64,7 +64,7 @@ $_SESSION['cart'];
     ?>
 <form method="post" action="check_cart.php">
     <!-- カート情報はhiddenフィールドとして送信 -->
-    <input type="hidden" name="cart" id="cart-data">
+    <!-- <input type="hidden" name="cart" id="cart-data"> -->
     <input type="submit" value="レジに進む"></input>
 </form>
     <footer></footer>
