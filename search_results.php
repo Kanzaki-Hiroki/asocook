@@ -67,6 +67,7 @@ if(isset($_POST['keyword'])){
     <input type="hidden" name="cart_data" id="cart-data">
     <button type="submit">レジに進む</button>
 </form>
+<script src="./script/script.js"></script>
     <footer></footer>
 </body>
 </html>
