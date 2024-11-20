@@ -37,10 +37,11 @@
             foreach ($stmt as $row){
                 echo '<form action="ad_item_data.php" method="post" style="display:inline" enctype="multipart/form-data">';
                 echo '<tr>';
-                echo '<tr><td>画像</td><td><img src="upload/', $row['url'], '" width = "100px"></td></tr>';
+                echo '<tr><td>画像</td><td><img src="Asocook/upload/', $row['url'], '" width = "100px"></td></tr>';
                 echo '<tr><td>変更画像</td><td><input type="file" name="url"></td></tr>';
                 echo '<tr><td>商品名</td><td><input type="text" name="item_name" value="', $row['item_name'], '"></td></tr>';
                 echo '<tr><td>売価</td><td><input type="text" name="hanbai_tanka" value="', $row['hanbai_tanka'], '"></td></tr>';
+                echo '<tr><td>在庫</td><td><input type="text" name="stock" value="', $row['stock'], '"></td></tr>';
                 echo '<input type="hidden" name="item_id" value="', $row['item_id'], '">';
                 echo '<input type="hidden" name="url" value="', $row['url'], '">';
                 echo '<input type="hidden" name="item_name" value="', $row['item_name'], '">';

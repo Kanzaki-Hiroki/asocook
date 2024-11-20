@@ -37,6 +37,7 @@
             echo '<tr><th>ID</th><th>画像</th><th>商品名</th><th>売価</th><th>在庫</th><th>変更</th></tr>';
 
             foreach ($stmt as $row){
+                echo 'wwww', $row['url'];
                 echo '<tr>';
                 echo '<td>', $row['item_id'], '</td>';
                 echo '<td><img src="upload/', $row['url'], '" width = "100px"></td>';
@@ -56,8 +57,12 @@
             echo '</table>';
         $pdo = null;
     ?>
-    
+    <!-- <form action="new_item.php" method="post"> -->
+        <a href="new_item.php"><button>新規登録</button></a>
+        <!-- <input type="hidden" name="item_id2" value="<?php $row['item_id']?>">
+        <input type="submit" value="新規登録">
+    </form> -->
     <a href="administrator.php"><button>戻る</button></a>
-    <a href="new_item.php"><button>新規登録</button></a>
+    
 </body>
 </html>
