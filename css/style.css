@@ -31,78 +31,101 @@
   outline : none;
 }
 
-/* ハンバーガーメニュー */
+/* チェックボックスを非表示にして、機能は残す */
 #menu__toggle {
-  opacity: 0;
+  display: none; /* チェックボックスを非表示にして機能は残す */
 }
+
+/* チェックボックスが選択されたとき、3本線を回転 */
 #menu__toggle:checked + .menu__btn > span {
-  transform: rotate(45deg);
+  transform: rotate(45deg); /* "X"形状に回転 */
 }
+
+/* チェックボックスが選択されたとき、上の線を水平に戻す */
 #menu__toggle:checked + .menu__btn > span::before {
-  top: 0;
-  transform: rotate(0deg);
+  top: 0; /* 位置を調整 */
+  transform: rotate(0deg); /* 水平線に戻す */
 }
+
+/* チェックボックスが選択されたとき、下の線が垂直の"+"形状に回転 */
 #menu__toggle:checked + .menu__btn > span::after {
-  top: 0;
-  transform: rotate(90deg);
+  top: 0; /* 位置を調整 */
+  transform: rotate(90deg); /* 垂直線に回転 */
 }
+
+/* チェックボックスが選択されたとき、メニューが右側からスライドイン */
 #menu__toggle:checked ~ .menu__box {
-  right: 0 !important;
+  right: 0 !important; /* メニューの右位置を0に設定して、右側からスライドイン */
 }
+
+/* ハンバーガーメニューボタンのスタイル */
 .menu__btn {
-  position: fixed;
-  top: 20px;
-  margin-top: 200px;
-  right: 20px;
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
-  z-index: 1;
+  position: fixed; /* 位置を固定し、ページをスクロールしても表示 */
+  top: 40px;          /* ページ上部からの距離を調整 */
+  margin-top: 200px;  /* 下方向の余白を追加し、3本線の垂直位置を調整 */
+  right: 20px;        /* ページ右側からの距離を調整 */
+  width: 26px;        /* ボタンの幅を設定 */
+  height: 26px;       /* ボタンの高さを設定 */
+  cursor: pointer;    /* ホバー時にクリック可能な状態に */
+  z-index: 1;         /* 他の要素より前面に配置 */
 }
+
+/* 3本線のスタイル */
 .menu__btn > span,
 .menu__btn > span::before,
 .menu__btn > span::after {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: #616161;
-  transition-duration: .25s;
+  display: block;     /* 3本線をブロックレベル要素に設定 */
+  position: absolute; /* ボタン内で位置を固定 */
+  width: 100%;        /* 3本線の幅をボタンと同じにする */
+  height: 2px;        /* 3本線の高さを2pxに設定 */
+  background-color: #616161; /* 線の色を設定 */
+  transition-duration: .25s; /* 変化をスムーズにするためのアニメーション時間を設定 */
 }
+
+/* 上の線の位置とスタイル */
 .menu__btn > span::before {
-  content: '';
-  top: -8px;
+  content: '';        /* 空の内容を作成 */
+  top: -8px;          /* 中央の線からの垂直オフセットを設定 */
 }
+
+/* 下の線の位置とスタイル */
 .menu__btn > span::after {
-  content: '';
-  top: 8px;
+  content: '';        /* 空の内容を作成 */
+  top: 8px;           /* 中央の線からの垂直オフセットを設定 */
 }
+
+/* メニューウィンドウのスタイル */
 .menu__box {
-  display: block;
-  position: fixed;
-  top: 0;
-  right:-100%;
-  width: 300px;
-  height: 100%;
-  margin: 0;
-  padding: 80px 0;
-  list-style: none;
-  background-color: #ECEFF1;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-  transition-duration: .25s;
+  display: block;        /* メニューをブロックレベル要素に設定 */
+  position: fixed;       /* メニューの位置を固定 */
+  top: 0;                /* ページ上部にメニューを揃える */
+  right: -200%;          /* 初期状態でメニューを右側に隠す */
+  width: 200px;          /* メニューの幅を300pxに設定 */
+  height: 10%;           /* メニューの高さを画面の高さに設定 */
+  border-radius: 15%;    /* 角を丸く設定 */
+  margin: 3%;            /* デフォルトのマージンを削除 */
+  padding: 100px 0;      /* 内側の余白を設定して、メニューの内容を上部から少し離す */
+  list-style: none;      /* メニュー項目のデフォルトリストスタイルを削除 */
+  background-color: #ffffff; /* メニューの背景色を設定 */
+  box-shadow: 2px 2px 6px(0, 0, 0, 0); /* 影の効果を追加 */
+  transition-duration: .25s; /* メニューがスライドイン・アウトするアニメーションの効果時間を設定 */
 }
+
+/* メニュー項目のスタイル */
 .menu__item {
-  display: block;
-  padding: 12px 24px;
-  color: #333;
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  text-decoration: none;
-  transition-duration: .25s;
+  display: block;           /* メニュー項目をブロックレベル要素に設定 */
+  padding: 6% 60px;         /* メニュー項目の内側の余白を設定 */
+  color: #050505;           /* 文字色を設定 */
+  font-family: 'Roboto', sans-serif; /* フォントを設定 */
+  font-size: 20px;          /* フォントサイズを設定 */
+  font-weight: 600;         /* フォントを太字に設定 */
+  text-decoration: none;    /* メニュー項目の下線を削除 */
+  transition-duration: .25s; /* ホバー時のトランジションアニメーションを設定 */
 }
+
+/* メニュー項目にホバーした時の効果 */
 .menu__item:hover {
-  background-color: #CFD8DC;
+  background-color: #bbc0c2; /* ホバー時の背景色を設定 */
 }
 
 /*検索ボックスとメニューボタン*/
@@ -127,4 +150,94 @@
 .alert_message {
   color: red;
   font-size: 0.7em;
+}
+
+
+/* 商品情報を横並びにする */
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.cart-item div {
+  margin-right: 15px;
+}
+.cart-item .input-group-prepend, .input-group-prepend{
+  margin-right: 0px; /* -+ボタンのマージンのみ削除 */
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group button {
+  width: 40px;
+  height: 40px;
+}
+
+.input-group input {
+  width: 60px;
+  text-align: center;
+}
+
+
+/* ボタンを横に並べるためのスタイル */
+div.input-group {
+  display: flex;
+  align-items: center;
+}
+
+button.btn-number {
+  display: inline-flex; /* ボタンを横並びに */
+  justify-content: center;
+  align-items: center;
+}
+
+/* WebKit ブラウザで、input type="number" のスピンボタンを非表示にする。 */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* Firefox で、input type="number" のスピンボタンを非表示にする。また、入力欄の値表示を中央寄せにし、高さをボタンのサイズに合わせる。 */
+input[type="number"] {
+  -moz-appearance: textfield;
+  text-align: center;
+  height: 44px;
+}
+
+/*ボタンのサイズを 44 × 44 CSS ピクセルにする。*/
+button.btn-number {
+  width: 44px;
+  height: 44px;
+}
+
+/* ステッパーコンポーネントの横幅を指定する。 */
+div.input-group {
+  width: 160px;
+}
+
+
+
+/* 親コンテナ .Cooke のスタイル */
+.Cooke {
+  display: flex; /* フレックスレイアウトを使用 */
+  flex-direction: column; /* 子要素を縦方向に配置 */
+  justify-content: center; /* 子要素をメイン軸（縦方向）で中央揃え */
+  align-items: center; /* 子要素を交差軸（横方向）で中央揃え */
+  height: 100vh; /* コンテナの高さをビューポート全体に設定 */
+  background-color: #f0f0f0; /* 背景色（任意） */
+}
+
+/* 画像のスタイル（任意、画像サイズや間隔を調整するため） */
+.Cooke img {
+  max-width: 300px; /* 画像の最大幅を制限 */
+  height: auto; /* 画像の比率を保持 */
+  margin: 10px 0; /* 上下の間隔 */
 }

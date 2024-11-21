@@ -65,7 +65,7 @@ if(isset($_POST['keyword'])){
 <form method="post" action="check_cart.php">
     <!-- カート情報はhiddenフィールドとして送信 -->
     <!-- <input type="hidden" name="cart" id="cart-data"> -->
-    <input type="submit" value="レジに進む"></input>
+    <input type="submit" value="カートを見る"></input>
 </form>
     <footer></footer>
 </body>
