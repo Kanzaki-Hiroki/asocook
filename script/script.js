@@ -27,7 +27,34 @@ $(".btn-number").click(function (e) {
     } else {
         input.val(0);
     }
-});
+
+
+        // 数量変更後、フォーム内の変更内容を即座に反映させる
+        var itemId = button.data("id");
+        var changeAmount = input.val();
+
+        // 更新された数量をサーバーに送信（非同期でも可能ですが、まずは普通のフォーム送信で）
+        var form = button.closest('form');
+        form.find("input[name='change_amount']").val(changeAmount);
+        form.find("input[name='item_id']").val(itemId);
+
+        // 合計数量も更新（必要に応じて）
+        updateTotalCount();
+    });
+
+    // 合計数量を更新する関数（必要に応じて）
+    function updateTotalCount() {
+        var totalCount = 0;
+        $(".input-number").each(function() {
+            var quantity = parseInt($(this).val());
+            if (!isNaN(quantity)) {
+                totalCount += quantity;
+            }
+        })
+    };
+
+
+
 $(".input-number").focusin(function () {
     $(this).data("oldValue", $(this).val());
 });

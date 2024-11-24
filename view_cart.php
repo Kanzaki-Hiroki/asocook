@@ -7,8 +7,8 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- jQueryの読み込み -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQueryの読み込み -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
@@ -61,23 +61,19 @@ session_start();
                     $sql->execute([$id]);
                     $result = $sql->fetchAll();
                     foreach ($result as $r) {
-                        // 商品IDを使ってユニークなIDを生成
-                        $uniqueId = 'number-of-unit-' . $r['item_id'];
                         echo '<div class="cart-item">';
-                        echo '<div>'.$r['url'].'</div>';  // 商品の画像やURL
+                        echo '<div>'.$r['url'].'</div>';
                         echo '<div>'.$r['item_name'].'<br>'.$r['hanbai_tanka'].'円</div>';  // 商品名と価格
-                        echo '<div class="input-group">
-                            <div class="input-group-prepend">
-                                    <button type="button" aria-label="減らす" aria-describedby="label-number-of-unit" class="btn btn-outline-dark btn-number rounded-0" data-type="minus" data-field="unit" data-id="'.$r['item_id'].'">
-                                    -</button>
-                                </div>
-                                <input type="number" id="'.$uniqueId.'" name="unit" value="'.$amount.'" min="0" max="100" class="form-control input-number border-dark">
-                                <div class="input-group-append">
-                                    <button type="button" aria-label="増やす" aria-describedby="label-number-of-unit" class="btn btn-outline-dark btn-number rounded-0" data-type="plus" data-field="unit" data-id="'.$r['item_id'].'">
-                                    +</button>
-                                </div>
-                            </div>';
-                            echo '<form action="',$_SERVER['PHP_SELF'],'" method="post">
+                        echo '<form action="changeCartdata.php" method="post">';
+                        echo '<select name="btn-',$r['item_id'],'" id="">'; //受け取るためにここをどう指定する？
+                        for($i = 0; $i <= 100; $i++){
+                            if($arr[1] == $i){
+                                echo '<option value="',$i,'" selected>',$i,'</option>';
+                            }else{
+                                echo '<option value="',$i,'">',$i,'</option>';
+                            }
+                        }
+                        echo '</select>
                             <input type="text" hidden name="count" value="', $count ,'">
                             <input type="text" hidden name="change_amount" value="', $amount ,'">
                             <input type="text" hidden name="item_id" value="', $r['item_id'] ,'">
@@ -91,12 +87,15 @@ session_start();
             echo '<p>カートに商品が入っていません</p>';
         }
         ?>
-        <form action="#" method="post">
+        <form action="settlement.php" method="post">
             <input type="submit" value="レジに進む">
+        </form>
+        <form action="search_results.php" method="post">
+            <input type="submit" value="戻る">
         </form>
         <form action="logout.php" method="post">
             <input type="submit" value="ログアウト">
         </form>
-    <script src="./script/script.js"></script>
+    <!-- <script src="./script/script.js"></script> -->
 </body>
 </html>

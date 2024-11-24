@@ -62,7 +62,7 @@ if(isset($_POST['keyword'])){
         echo '</form>';
     } //foreachの終わり
     ?>
-<form method="post" action="check_cart.php">
+<form method="post" action="view_cart.php">
     <!-- カート情報はhiddenフィールドとして送信 -->
     <!-- <input type="hidden" name="cart" id="cart-data"> -->
     <input type="submit" value="カートを見る"></input>
