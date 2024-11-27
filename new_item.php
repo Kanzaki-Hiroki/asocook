@@ -25,7 +25,7 @@
                 
                 <tr><td>商品名</td><td><input type="text" name="item"></td></tr>
                 <tr><td>画像</td><td><input type="file" name="url"></td></tr>
-                <tr><td>売価</td><td><input type="text" name="kakau"></td></tr>
+                <tr><td>売価</td><td><input type="text" name="hanbai_tanka"></td></tr>
                 <tr><td>在庫</td><td><input type="text" name="stock"></td></tr>
             </tr>
         </table>
