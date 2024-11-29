@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>新規追加</title>
+    <title>ユーザー管理</title>
 </head>
 <body>
     <div class="header">
@@ -16,19 +16,42 @@
             <img src="img/icon.png" alt="管理者アイコン">
             <span>ログイン中</span>
         </div>
-        <a href="logout.php"><button class="logout_button">ログアウト</button></a>
+        <a href=""><button class="logout_button">ログアウト</button></a>
     </div>
-    <h1>新規追加</h1>
-    <form action="new_item_db.php" method="post" enctype="multipart/form-data">
-        <table border="|">
-            <tr>
-                <tr><td>商品名</td><td><input type="text" name="item"></td></tr>
-                <tr><td>画像</td><td><input type="file" name="file"></td></tr>
-                <tr><td>売価</td><td><input type="text" name="kakau"></td></tr>
-            </tr>
-        </table>
-        <input type="submit" value="登録する">
-    </form>
-    <a href="ad_item.php"><button>戻る</button></a>
+    <h1>ユーザー管理</h1>
+    <?php
+        $pdo = new PDO('mysql:host=mysql309.phy.lolipop.lan;
+        dbname=LAA1557221-aso2301382;charset=utf8',
+        'LAA1557221',
+        'aso12345');
+        
+            
+
+            $sql = 'select * from user';
+
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+
+            echo '<table border = "|">';
+
+            echo '<tr><th>ユーザー名</th><th>メールアドレス</th><th>注文</th><th>情報</th></tr>';
+
+            foreach ($stmt as $row){
+                echo '<form action="account_infor.php" method="post">';
+                echo '<tr>';
+                echo '<td>', $row['name'], '</td>';
+                echo '<td>', $row['email'], '</td>';
+                echo '<td><input type="submit" value="履歴" name="rireki"></td>';
+                echo '<td><input type="submit" value="詳細" name="syosai"></td>';
+                echo '<input type="hidden" name="name" value="', $row['name'], '">';
+                echo '</form>';
+                echo '</tr>';
+            }
+
+            echo '</table>';
+        $pdo = null;
+    ?>
+    <a href="administrator.php"><button>戻る</button></a>
+    
 </body>
 </html>

@@ -37,7 +37,6 @@
             echo '<tr><th>ID</th><th>画像</th><th>商品名</th><th>売価</th><th>在庫</th><th>変更</th></tr>';
 
             foreach ($stmt as $row){
-                echo $row['url'];
                 echo '<tr>';
                 echo '<td>', $row['item_id'], '</td>';
                 echo '<td><img src="upload/', $row['url'], '" width = "100px"></td>';
