@@ -40,11 +40,10 @@
                 echo '<tr><td>メールアドレス</td><td>', $row['email'],'</td></tr>';
                 echo '<tr><td>パスワード</td><td>', $row['user_pass'],'</td></tr>';
                 echo '<tr><td>住所</td><td>', $row['address'], '</td></tr>';
-                // echo '<input type="hidden" name="url" value="', $row['url'], '">';
-                // echo '<input type="hidden" name="item_id" value="', $row['item_id'], '">'; 
-                // echo '<input type="hidden" name="item_name" value="', $row['item_name'], '">';
-                // echo '<input type="hidden" name="hanbai_tanka" value="', $row['hanbai_tanka'], '">';
-                // echo '<input type="hidden" name="stock" value="', $row['stock'], '">';
+                echo '<input type="hidden" name="', $row['name'], '">';
+                echo '<input type="hidden" name="', $row['email'], '">'; 
+                echo '<input type="hidden" name="', $row['user_pass'], '">';
+                echo '<input type="hidden" name="', $row['address'], '">';
                 echo '</form>';
                 echo '</tr>';
             }

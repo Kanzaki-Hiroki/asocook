@@ -1,42 +1,86 @@
-/* システムロゴ */
-.logo {
+/* 全体を中央揃え */
+body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px auto;
-  background-color: #fff85a;
-}
-.logo img{
-  /* width: 100%; */
-  max-width: 1000px;
-  height: auto;
+  height: 100vh; /* ビューポートの高さを100%に設定 */
+  margin: 0;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
 }
 
-/* 主要內容區域 */
-.content {
-  text-align: center; /* 將文字置中 */
-  margin: 50px auto; /* 垂直與水平居中 */
-  padding: 20px; /* 內距 */
-  max-width: 600px; /* 最大寬度 */
-  background-color: #f8f9fa; /* 淡灰色背景 */
-  border-radius: 8px; /* 圓角 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加陰影 */
-}
-
-/* 返回首頁按鈕 */
-.btn-home {
-  padding: 10px 20px; /* 內距 */
-  font-size: 1em; /* 文字大小 */
-  color: #fff; /* 文字顏色為白色 */
-  background-color: #007bff; /* 按鈕背景色（藍色） */
-  border: none; /* 移除邊框 */
-  border-radius: 4px; /* 圓角 */
-  cursor: pointer; /* 游標變成點擊手型 */
-  transition: background-color 0.3s ease; /* 背景顏色過渡 */
+/* コンテンツ全体を囲むラッパー */
+.container {
+  width: 80%;
+  max-width: 1200px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
   text-align: center;
 }
 
-.btn-home:hover {
-  background-color: #0056b3; /* 滑鼠懸停時的按鈕顏色 */
+/* ヘッダーのスタイル */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
+.header .logo img {
+  height: 50px;
+}
+
+.header .icon img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logout_button {
+  background-color: #ff6666;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* テーブルのスタイル */
+.item-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.item-table th, .item-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.item-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.item-table img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* ボタンセクション */
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons a button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+}

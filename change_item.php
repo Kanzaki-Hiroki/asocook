@@ -44,9 +44,9 @@
                 echo '<tr><td>在庫</td><td><input type="text" name="stock" value="', $row['stock'], '"></td></tr>';
                 echo '<input type="hidden" name="url" value="', $row['url'], '">';
                 echo '<input type="hidden" name="item_id" value="', $row['item_id'], '">'; 
-                echo '<input type="hidden" name="item_name" value="', $row['item_name'], '">';
-                echo '<input type="hidden" name="hanbai_tanka" value="', $row['hanbai_tanka'], '">';
-                echo '<input type="hidden" name="stock" value="', $row['stock'], '">';
+                echo '<input type="hidden" name="', $row['item_name'], '">';
+                echo '<input type="hidden" name="', $row['hanbai_tanka'], '">';
+                echo '<input type="hidden" name="', $row['stock'], '">';
                 echo '<input type="submit" value="変更する">';
                 echo '</form>';
                 echo '</tr>';
