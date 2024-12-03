@@ -47,6 +47,7 @@ session_start();
             </div>
         </div>
     </header>
+    <img src="./img/catchphrase.png" alt="">
     <form action="login.html"><input type="submit" value="ログイン"></form>
     <form action="logout.php"><input type="submit" value="ログアウト"></form>
 
