@@ -10,10 +10,10 @@
     <div class="container">
         <div class="header">
             <div class="logo">
-                <img src="img/logo.png" alt="システムロゴ">
+                <img src="./img/logo.png" alt="システムロゴ">
             </div>
             <div class="icon">
-                <img src="img/icon.png" alt="管理者アイコン">
+                <img src="./img/icon.png" alt="管理者アイコン">
                 <span>ログイン中</span>
             </div>
             <a href=""><button class="logout_button">ログアウト</button></a>
