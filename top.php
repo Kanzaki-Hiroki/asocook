@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -24,9 +28,21 @@
                     <span></span>
                 </label>
                 <ul class="menu__box">
-                    <li><a class="menu__item" href="#">Home</a></li>
-                    <li><a class="menu__item" href="#">About</a></li>
-                    <li><a class="menu__item" href="login.php">ログイン</a></li>
+                    <?php
+                    // if(isset($_SESSION['login_status']) && $_SESSION['login_status']){
+                    //     echo '
+                    //     <li><a class="menu__item" href="top.php">トップ</a></li>
+                    //     <li><a class="menu__item" href="mypage.php">マイページ</a></li>
+                    //     <li><a class="menu__item" href="logout.php">ログアウト</a></li>
+                    //     ';
+                    // }else{
+                    //     echo '
+                    //     <li><a class="menu__item" href="top.php">トップ</a></li>
+                    //     <li><a class="menu__item" href="login.html">ログイン</a></li>
+                    //     ';
+                    // }
+                    include_once('header.php');
+                    ?>
                 </ul>
             </div>
         </div>

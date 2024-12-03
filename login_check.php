@@ -1,6 +1,5 @@
 <?php
 session_start();
-$login_false;
 $pdo = new PDO('mysql:host=mysql309.phy.lolipop.lan;
 dbname=LAA1557221-aso2301382;charset=utf8',
 'LAA1557221',
@@ -24,7 +23,7 @@ if(substr($id,0,2) === 'ID' && substr($id,-1,-2) === 'AD'){ //管理者IDか判�
             header('Location:administrator.php'); //管理者トップ画面に遷移
         }
     }else{ //未登録のID,pass ログイン画面でエラー表示
-        $login_false = true;
+        $GLOBALS['login_status'] = true;
         header('Location: login.html');
     }
 }else{ //ユーザーテーブルで照合
@@ -35,10 +34,11 @@ if(substr($id,0,2) === 'ID' && substr($id,-1,-2) === 'AD'){ //管理者IDか判�
                 $_SESSION['id'] = $u['email'];
                 $_SESSION['pass'] = $u['user_pass'];
                 $_SESSION['user_name'] = $u['name'];
-                header('Location: top.html'); //トップ画面に遷移
+                $_SESSION['login_status'] = true;
+                header('Location: top.php'); //トップ画面に遷移
             }
         }else{ //未登録のユーザーID/パスワード ログイン画面でエラー表示
-            $login_false = true;
+            $_SESSION['login_status'] = false;
             header('Location: login.html');
         }
     }

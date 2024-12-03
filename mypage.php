@@ -29,4 +29,5 @@ dbname=LAA1557221-aso2301382;charset=utf8',
     <h2><?= $_SESSION['user_name'] ?>様</h2>
 <a href="#"><button><img src="./img/clock.jpg" alt="">注文履歴</button></a>
 </body>
+<?= '<input type="text" value="',$user['name'],'" readonly>';?>
 </html>

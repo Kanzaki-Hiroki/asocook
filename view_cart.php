@@ -54,6 +54,7 @@ session_start();
                 }
             }
             echo "<p>カートに入っている商品：$count 点</p>";
+            $total = 0; //合計金額を計算する変数
             foreach ($_SESSION['cart'] as $arr) {
                 //foreach ($arr as $id => $amount) {
                     $id = $arr[0];
@@ -65,7 +66,7 @@ session_start();
                         echo '<div>'.$r['url'].'</div>';
                         echo '<div>'.$r['item_name'].'<br>'.$r['hanbai_tanka'].'円</div>';  // 商品名と価格
                         echo '<form action="changeCartdata.php" method="post">';
-                        echo '<select name="btn-',$r['item_id'],'" id="">'; //受け取るためにここをどう指定する？
+                        echo '<select name="btn-',$r['item_id'],'" id="">'; //
                         for($i = 0; $i <= 100; $i++){
                             if($arr[1] == $i){
                                 echo '<option value="',$i,'" selected>',$i,'</option>';
@@ -73,6 +74,7 @@ session_start();
                                 echo '<option value="',$i,'">',$i,'</option>';
                             }
                         }
+                        $total += $r['hanbai_tanka']*$amount;
                         echo '</select>
                             <input type="text" hidden name="count" value="', $count ,'">
                             <input type="text" hidden name="change_amount" value="', $amount ,'">
@@ -81,17 +83,22 @@ session_start();
                             </form>';
                         echo '</div>';
                     }
+                    echo "<div><p>合計金額：$total 円</p></div>";
+                    $_SESSION['totalAmount'] = $total;
                 //}
             }
         } else {
             echo '<p>カートに商品が入っていません</p>';
         }
         ?>
-        <form action="settlement.php" method="post">
+        <form action="payment.php" method="post">
             <input type="submit" value="レジに進む">
         </form>
         <form action="search_results.php" method="post">
             <input type="submit" value="戻る">
+        </form>
+        <form action="login.html" method="post">
+            <input type="submit" value="ログイン">
         </form>
         <form action="logout.php" method="post">
             <input type="submit" value="ログアウト">

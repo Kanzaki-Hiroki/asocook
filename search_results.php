@@ -22,8 +22,7 @@ if(isset($_POST['keyword'])){
                 <img src="img/logo.png" alt="システムロゴ">
             </p>
         </div>
-    </header>
-    <div class="navi">
+        <div class="navi">
         <form method="post" action="search_results.php" class="search_container">
             <input type="text" size="25" placeholder="キーワード検索" name="keyword">
             <input type="submit" value="&#xf002">
@@ -41,6 +40,8 @@ if(isset($_POST['keyword'])){
             </ul>
         </div>
     </div>
+    </header>
+
 
     <h2>検索結果</h2>
     <?php
