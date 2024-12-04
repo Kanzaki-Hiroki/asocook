@@ -28,27 +28,16 @@ session_start();
                     <span></span>
                 </label>
                 <ul class="menu__box">
-                    <?php
-                    // if(isset($_SESSION['login_status']) && $_SESSION['login_status']){
-                    //     echo '
-                    //     <li><a class="menu__item" href="top.php">トップ</a></li>
-                    //     <li><a class="menu__item" href="mypage.php">マイページ</a></li>
-                    //     <li><a class="menu__item" href="logout.php">ログアウト</a></li>
-                    //     ';
-                    // }else{
-                    //     echo '
-                    //     <li><a class="menu__item" href="top.php">トップ</a></li>
-                    //     <li><a class="menu__item" href="login.html">ログイン</a></li>
-                    //     ';
-                    // }
-                    include_once('header.php');
-                    ?>
+                    <?php include_once('header.php'); ?>
                 </ul>
             </div>
         </div>
     </header>
-    <img src="./img/catchphrase.png" alt="">
-    <form action="login.html"><input type="submit" value="ログイン"></form>
+    <p>
+        <img src="img/catchphrase.png" alt="">
+        テスト用ボタン<br>
+    </p>
+    <form action="login.php"><input type="submit" value="ログイン"></form>
     <form action="logout.php"><input type="submit" value="ログアウト"></form>
 
     <footer></footer>

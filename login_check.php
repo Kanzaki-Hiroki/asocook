@@ -31,10 +31,10 @@ if(substr($id,0,2) === 'ID' && substr($id,-1,-2) === 'AD'){ //管理者IDか判�
         $sql->execute([$_POST['log_id'],$_POST['pass']]);
         if($user = $sql->fetchAll()){
             foreach($user as $u){
-                $_SESSION['id'] = $u['email'];
-                $_SESSION['pass'] = $u['user_pass'];
-                $_SESSION['user_name'] = $u['name'];
-                $_SESSION['login_status'] = true;
+                $_SESSION['id'] = $u['email']; //メアド
+                $_SESSION['pass'] = $u['user_pass']; //パスワード
+                $_SESSION['user_name'] = $u['name']; //ユーザー名
+                $_SESSION['login_status'] = true; //ログイン状態を記憶
                 header('Location: top.php'); //トップ画面に遷移
             }
         }else{ //未登録のユーザーID/パスワード ログイン画面でエラー表示

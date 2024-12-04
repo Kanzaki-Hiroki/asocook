@@ -57,8 +57,8 @@ session_start();
             $total = 0; //合計金額を計算する変数
             foreach ($_SESSION['cart'] as $arr) {
                 //foreach ($arr as $id => $amount) {
-                    $id = $arr[0];
-                    $amount = $arr[1];
+                    $id = $arr[0]; //n個目の商品のID
+                    $amount = $arr[1]; //n個目の商品の数量
                     $sql->execute([$id]);
                     $result = $sql->fetchAll();
                     foreach ($result as $r) {
@@ -84,7 +84,7 @@ session_start();
                         echo '</div>';
                     }
                     echo "<div><p>合計金額：$total 円</p></div>";
-                    $_SESSION['totalAmount'] = $total;
+                    $_SESSION['totalAmount'] = $total; //合計金額
                 //}
             }
         } else {

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -12,7 +16,7 @@
         <header>
             <div id="">
                 <p class="logo">
-                    <a href="top.html"><img src="img/logo.png" alt=""></a>
+                    <a href="top.php"><img src="img/logo.png" alt=""></a>
                 </p>
             </div>
         </header>
