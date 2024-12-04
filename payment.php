@@ -13,27 +13,30 @@ session_start();
     <title>会計画面</title>
 </head>
 <body>
-<div class="logo">
-        <img src="img/logo.png" alt="システムロゴ">
-    </div>
-
-    <div class="navi">
-        <div class="hamburger-menu">
-            <input id="menu__toggle" type="checkbox">
-            <label class="menu__btn" for="menu__toggle">
-                <span></span>
-            </label>
-            <ul class="menu__box">
-                <li><a class="menu__item" href="#">Home</a></li>
-                <li><a class="menu__item" href="#">About</a></li>
-                <li><a class="menu__item" href="login.php">ログイン</a></li>
-            </ul>
+<header>
+        <div class="logo">
+            <img src="img/logo.png" alt="システムロゴ">
         </div>
-    </div>
+        <div class="navi">
+            <form method="post" action="search_results.php" class="search_container">
+                <input type="text" size="25" placeholder="キーワード検索" name="keyword">
+                <input type="submit" value="&#xf002">
+            </form>
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox">
+                <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                </label>
+                <ul class="menu__box">
+                    <?php include_once('header.php'); ?>
+                </ul>
+            </div>
+        </div>
+    </header>
 
     <h1>お支払方法</h1>
     <h2>クレジットカード情報を入力</h2>
-    <form action="payment.php" method="POST">
+    <form action="resisterDB.php" method="POST">
     <p>
         <label for="cardNumber">カード番号</label>
         <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9876 5432" oninput="formatCardNumber(this)" required>
@@ -53,7 +56,8 @@ session_start();
         <input type="text" id="cvv" name="cvv" placeholder="123" required>
     </p>
 
-    <a href="resisterDB.php"><button type="submit">支払いを完了</button></a> <!-- 購入データをDBに登録 -->
+    <!-- <a href="resisterDB.php"><button type="submit">支払いを完了</button></a> 購入データをDBに登録 -->
+    <input type="submit" value="支払いを完了する">
 </form>
 
 <script>

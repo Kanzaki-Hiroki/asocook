@@ -114,7 +114,7 @@
 /* メニュー項目のスタイル */
 .menu__item {
   display: block;           /* メニュー項目をブロックレベル要素に設定 */
-  padding: 6% 60px;         /* メニュー項目の内側の余白を設定 */
+  padding: 6% 40px;         /* メニュー項目の内側の余白を設定 */
   color: #050505;           /* 文字色を設定 */
   font-family: 'Roboto', sans-serif; /* フォントを設定 */
   font-size: 20px;          /* フォントサイズを設定 */
@@ -226,23 +226,23 @@ div.input-group {
 
 
 /* 親コンテナ .Cooke のスタイル */
-.Cooke {
-  display: flex; /* フレックスレイアウトを使用 */
-  flex-direction: column; /* 子要素を縦方向に配置 */
-  justify-content: center; /* 子要素をメイン軸（縦方向）で中央揃え */
-  align-items: center; /* 子要素を交差軸（横方向）で中央揃え */
-  height: 100vh; /* コンテナの高さをビューポート全体に設定 */
-  background-color: #f0f0f0; /* 背景色（任意） */
-}
+/* .Cooke { */
+  /* display: flex; フレックスレイアウトを使用 */
+  /* flex-direction: column; 子要素を縦方向に配置 */
+  /* justify-content: center; 子要素をメイン軸（縦方向）で中央揃え */
+  /* align-items: center; 子要素を交差軸（横方向）で中央揃え */
+  /* height: 100vh; コンテナの高さをビューポート全体に設定 */
+  /* background-color: #f0f0f0; 背景色（任意） */
+/* } */
 
 /* 画像のスタイル（任意、画像サイズや間隔を調整するため） */
-.Cooke img {
-  max-width: 300px; /* 画像の最大幅を制限 */
+/* .Cooke img {
+  max-width: 300px; 画像の最大幅を制限
   height: auto; /* 画像の比率を保持 */
-  margin: 10px 0; /* 上下の間隔 */
-}
+  /* margin: 10px 0; 上下の間隔 */ */
+/* } */
 
-/* 決済画面のプルダウンリスト */
+/*  */
 .selectbox-3 {
   display: inline-flex;
   align-items: center;

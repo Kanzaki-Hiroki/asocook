@@ -34,7 +34,9 @@ session_start();
 
         $sql = $pdo->prepare('select * from item where item_id = ?');
         $count = 0;
-        // var_dump($_SESSION['cart']);
+        
+        echo var_dump($_SESSION['cart']);
+
         if (isset($_SESSION['cart'])) {
             foreach ($_SESSION['cart'] as $arr) {
                 //var_dump($arr);
@@ -63,7 +65,7 @@ session_start();
                     $result = $sql->fetchAll();
                     foreach ($result as $r) {
                         echo '<div class="cart-item">';
-                        echo '<div>'.$r['url'].'</div>';
+                        echo "<div><img src=".$r['url']." ></div>";
                         echo '<div>'.$r['item_name'].'<br>'.$r['hanbai_tanka'].'円</div>';  // 商品名と価格
                         echo '<form action="changeCartdata.php" method="post">';
                         echo '<select name="btn-',$r['item_id'],'" id="">'; //
@@ -83,10 +85,10 @@ session_start();
                             </form>';
                         echo '</div>';
                     }
-                    echo "<div><p>合計金額：$total 円</p></div>";
-                    $_SESSION['totalAmount'] = $total; //合計金額
                 //}
             }
+            echo "<div><p>合計金額：$total 円</p></div>";
+            $_SESSION['totalAmount'] = $total; //合計金額
         } else {
             echo '<p>カートに商品が入っていません</p>';
         }

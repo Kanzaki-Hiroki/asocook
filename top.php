@@ -35,6 +35,7 @@ session_start();
     </header>
     <p>
         <img src="img/catchphrase.png" alt="">
+        <img src="img/ASO CooKa.png" alt="">
         テスト用ボタン<br>
     </p>
     <form action="login.php"><input type="submit" value="ログイン"></form>
