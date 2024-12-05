@@ -10,16 +10,6 @@ dbname=LAA1557221-aso2301382;charset=utf8',
 'LAA1557221',
 'aso12345');
 
-// $pdo = new PDO('mysql:host=mysql309.phy.lolipop.lan;
-// dbname=	LAA1557204-asocook;charset=utf8',
-// 'LAA1557204',
-// 'Pass0423');
-
-// //注文テーブルから現在の注文件数を取得、+1してIDにする
-// $sql = "SELECT * FROM order";
-// $sql = $pdo->query($sql);
-// $order_id = $sql->rowCount() + 1;
-
 //現在時刻を取得
 $date = date("Y-m-d H:i:s");
 echo var_dump($_SESSION['cart']);
@@ -28,18 +18,30 @@ echo var_dump($_SESSION['cart']);
 $sql = $pdo->prepare("INSERT INTO `order` (email, total_amount, order_date) VALUES (?, ?, ?)");
 $sql->execute([$_SESSION['id'], (int)$_SESSION['totalAmount'], $date]);
 
-
-//商品IDを順に保存する配列
-$id_arr = array();
-//商品IDを順に保存する配列
-$qua_arr = array();
-foreach($_SESSION['cart'] as $arr) {
-        $id_arr[] = $arr[0]; //n個目の商品のID
-        $qua_arr[] = $arr[1]; //n個目の商品の数量
-    }
-echo var_dump($id_arr),'<br>';
-echo var_dump($qua_arr);
+//orderテーブルに挿入したorder_idを取得
+echo '<br>';
+echo '注文ID:',$o_id = $pdo->lastInsertId();
+echo '<br>';
+$sql = $pdo->prepare("SELECT * from order_detail");
+echo '注文詳細ID:',$detail_id = $sql->rowCount() + 1;
+echo '<br>';
 
 //注文詳細テーブルに購入データを保存
+foreach($_SESSION['cart'] as $arr) {
+    echo '商品ID:',$item_id = $arr[0]; //n個目の商品のID
+    echo '数量:',$quantity = $arr[1]; //n個目の商品の数量
 
+    $sql = $pdo->prepare('SELECT * from item where item_id = ?');
+    $sql->execute([$item_id]);
+    $res = $sql->fetchAll();
+    foreach($res as $r){
+        echo '販売単価:', $tanka = $r['hanbai_tanka'];
+    }
+    echo '<br>';
+
+    $sql = $pdo->prepare("INSERT INTO `order_detail` (detail_id, order_id, item_id, quantity, subtotal) VALUES (?, ?, ?, ?, ?)");
+    $sql->execute([$detail_id, $o_id, $item_id, $quantity, $tanka*$quantity]);
+    }
+
+echo '<h2>購入処理が完了しました</h2>';
 ?>
