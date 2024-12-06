@@ -14,49 +14,45 @@ session_start();
 </head>
 <body>
 <header>
-        <div class="logo">
-            <img src="img/logo.png" alt="システムロゴ">
+    <div class="logo">
+        <img src="img/logo.png" alt="システムロゴ">
+    </div>
+    <div class="navi">
+        <form method="post" action="search_results.php" class="search_container">
+            <input type="text" size="25" placeholder="キーワード検索" name="keyword">
+            <input type="submit" value="&#xf002">
+        </form>
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox">
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+            <ul class="menu__box">
+                <?php include_once('header.php'); ?>
+            </ul>
         </div>
-        <div class="navi">
-            <form method="post" action="search_results.php" class="search_container">
-                <input type="text" size="25" placeholder="キーワード検索" name="keyword">
-                <input type="submit" value="&#xf002">
-            </form>
-            <div class="hamburger-menu">
-                <input id="menu__toggle" type="checkbox">
-                <label class="menu__btn" for="menu__toggle">
-                    <span></span>
-                </label>
-                <ul class="menu__box">
-                    <?php include_once('header.php'); ?>
-                </ul>
-            </div>
-        </div>
-    </header>
+    </div>
+</header>
 
-    <h1>お支払方法</h1>
-    <h2>クレジットカード情報を入力</h2>
-    <form action="resisterDB.php" method="POST">
+<h1>お支払方法</h1>
+<h2>クレジットカード情報を入力</h2>
+<form action="resisterDB.php" method="POST">
     <p>
         <label for="cardNumber">カード番号</label>
-        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9876 5432" oninput="formatCardNumber(this)" required>
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" oninput="formatCardNumber(this)" required>
     </p>
-
     <p>
         <label for="cardName">カード名義人</label>
         <input type="text" id="cardName" name="cardName" placeholder="山田 太郎" required>
     </p>
-
     <p>
         <label for="expirationDate">有効期限</label>
         <input type="month" id="expirationDate" name="expirationDate" required>
     </p>
     <p>
         <label for="cvv">セキュリティコード (CVV)</label>
-        <input type="text" id="cvv" name="cvv" placeholder="123" required>
+        <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3" pattern="\d{3}" required>
     </p>
-
-    <!-- <a href="resisterDB.php"><button type="submit">支払いを完了</button></a> 購入データをDBに登録 -->
     <input type="submit" value="支払いを完了する">
 </form>
 

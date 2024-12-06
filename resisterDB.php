@@ -22,9 +22,9 @@ $sql->execute([$_SESSION['id'], (int)$_SESSION['totalAmount'], $date]);
 echo '<br>';
 echo '注文ID:',$o_id = $pdo->lastInsertId();
 echo '<br>';
-$sql = $pdo->prepare("SELECT * from order_detail");
-echo '注文詳細ID:',$detail_id = $sql->rowCount() + 1;
-echo '<br>';
+// $sql = $pdo->prepare("SELECT * from order_detail");
+// echo '注文詳細ID:',$detail_id = $sql->rowCount() + 1;
+// echo '<br>';
 
 //注文詳細テーブルに購入データを保存
 foreach($_SESSION['cart'] as $arr) {
@@ -39,9 +39,10 @@ foreach($_SESSION['cart'] as $arr) {
     }
     echo '<br>';
 
-    $sql = $pdo->prepare("INSERT INTO `order_detail` (detail_id, order_id, item_id, quantity, subtotal) VALUES (?, ?, ?, ?, ?)");
-    $sql->execute([$detail_id, $o_id, $item_id, $quantity, $tanka*$quantity]);
+    $sql = $pdo->prepare("INSERT INTO `order_detail` ( order_id, item_id, quantity, subtotal) VALUES ( ?, ?, ?, ?)");
+    $sql->execute([ $o_id, $item_id, $quantity, $tanka*$quantity]);
     }
 
 echo '<h2>購入処理が完了しました</h2>';
 ?>
+<input type="submit" value="トップページに戻る">

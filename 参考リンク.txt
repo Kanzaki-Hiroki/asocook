@@ -17,4 +17,5 @@ https://ec-force.com/blog/cart_010
 ・リダイレクト
 https://qiita.com/keitaMax/items/b2b450ba969be1c00fbd
 
-・
+・DB
+https://kinocolog.com/pdo_lastinsertid/

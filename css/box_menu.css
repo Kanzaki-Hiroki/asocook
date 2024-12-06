@@ -1,0 +1,30 @@
+/* 固定スタイル */
+.fixed {
+    position: fixed;  /* ページに固定 */
+    top: 0;           /* ページ上部に固定 */
+    left: 0;          /* 左端に配置 */
+    right: 0;         /* 右端に配置 */
+    z-index: 1000;    /* 他の要素より前面に表示 */
+    background-color: white;  /* 背景色を白にして他の要素と重ならないようにする */
+    box-shadow: 0 4px 2px -2px gray; /* 下に影をつけて固定感を出す */
+  }
+  
+  /* 検索ボックス */
+  .search_container {
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #999;
+    padding: 3px 10px;
+    border-radius: 20px;
+    height: 2.3em;
+    width: 260px;
+    overflow: hidden;
+  }
+  
+  /* ハンバーガーメニュー */
+  .hamburger-menu {
+    position: fixed;
+    top: 40px; /* ボタンの位置調整 */
+    right: 20px;
+  }
+  
