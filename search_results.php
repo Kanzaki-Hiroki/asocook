@@ -16,30 +16,25 @@ if(isset($_POST['keyword'])){
     <title>検索結果</title>
 </head>
 <body>
-    <header>
-        <div id="">
-            <p class="logo">
-                <img src="img/logo.png" alt="システムロゴ">
-            </p>
+<header>
+        <div class="logo">
+            <img src="img/logo.png" alt="システムロゴ">
         </div>
         <div class="navi">
-        <form method="post" action="search_results.php" class="search_container">
-            <input type="text" size="25" placeholder="キーワード検索" name="keyword">
-            <input type="submit" value="&#xf002">
-        </form>
-        <div class="hamburger-menu">
-            <label class="menu__btn" for="menu__toggle">
-            <span></span>
-            </label>
-            <ul class="menu__box">
-                <li><a class="menu__item" href="#">Home</a></li>
-                <li><a class="menu__item" href="#">About</a></li>
-                <li><a class="menu__item" href="login.php">ログイン</a></li>
-                <li><a class="menu__item" href="#">Contact</a></li>
-                <li><a class="menu__item" href="#">Twitter</a></li>
-            </ul>
+            <form method="post" action="search_results.php" class="search_container fixed">
+                <input type="text" size="25" placeholder="キーワード検索" name="keyword">
+                <input type="submit" value="&#xf002">
+            </form>
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox">
+                <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                </label>
+                <ul class="menu__box">
+                    <?php include_once('header.php'); ?>
+                </ul>
+            </div>
         </div>
-    </div>
     </header>
 
 

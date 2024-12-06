@@ -55,12 +55,12 @@
 
 /* チェックボックスが選択されたとき、メニューが右側からスライドイン */
 #menu__toggle:checked ~ .menu__box {
-  right: 0 !important; /* メニューの右位置を0に設定して、右側からスライドイン */
+  right: 20px !important; /* メニューの右位置を0に設定して、右側からスライドイン */
 }
 
 /* ハンバーガーメニューボタンのスタイル */
 .menu__btn {
-  position: fixed; /* 位置を固定し、ページをスクロールしても表示 */
+  position: absolute; /* 位置を固定し、ページをスクロールしても表示 */
   top: 40px;          /* ページ上部からの距離を調整 */
   margin-top: 200px;  /* 下方向の余白を追加し、3本線の垂直位置を調整 */
   right: 20px;        /* ページ右側からの距離を調整 */
@@ -104,7 +104,8 @@
   height: 10%;           /* メニューの高さを画面の高さに設定 */
   border-radius: 15%;    /* 角を丸く設定 */
   margin: 3%;            /* デフォルトのマージンを削除 */
-  padding: 100px 0;      /* 内側の余白を設定して、メニューの内容を上部から少し離す */
+  /* padding: 100px 0;      内側の余白を設定して、メニューの内容を上部から少し離す */
+  padding: 70px 0 100px 0;
   list-style: none;      /* メニュー項目のデフォルトリストスタイルを削除 */
   background-color: #ffffff; /* メニューの背景色を設定 */
   box-shadow: 2px 2px 6px(0, 0, 0, 0); /* 影の効果を追加 */
@@ -120,7 +121,8 @@
   font-size: 20px;          /* フォントサイズを設定 */
   font-weight: 600;         /* フォントを太字に設定 */
   text-decoration: none;    /* メニュー項目の下線を削除 */
-  transition-duration: .25s; /* ホバー時のトランジションアニメーションを設定 */
+  transition-duration: .25s;
+  text-align: center; /* ホバー時のトランジションアニメーションを設定 */
 }
 
 /* メニュー項目にホバーした時の効果 */
@@ -139,6 +141,7 @@
   justify-content: center;
   align-items: center;
   margin: 20px auto;
+  margin-top: 0px;
   background-color: #fff85a;
 }
 .logo img{

@@ -1,30 +1,17 @@
-/* 固定スタイル */
-.fixed {
-    position: fixed;  /* ページに固定 */
-    top: 0;           /* ページ上部に固定 */
-    left: 0;          /* 左端に配置 */
-    right: 0;         /* 右端に配置 */
-    z-index: 1000;    /* 他の要素より前面に表示 */
-    background-color: white;  /* 背景色を白にして他の要素と重ならないようにする */
-    box-shadow: 0 4px 2px -2px gray; /* 下に影をつけて固定感を出す */
-  }
-  
-  /* 検索ボックス */
-  .search_container {
-    box-sizing: border-box;
-    position: relative;
-    border: 1px solid #999;
-    padding: 3px 10px;
-    border-radius: 20px;
-    height: 2.3em;
-    width: 260px;
-    overflow: hidden;
-  }
-  
-  /* ハンバーガーメニュー */
-  .hamburger-menu {
-    position: fixed;
-    top: 40px; /* ボタンの位置調整 */
-    right: 20px;
-  }
-  
+/* .naviがスクロール後に固定されるスタイル */
+.navi.fixed {
+  position: fixed;  /* 上部に固定 */
+  top: 0;           /* 上部に位置させる */
+  left: 0;          /* 左端に合わせる */
+  width: 100%;      /* 幅を100%に */
+  background: yellow;  /* 固定された際に背景色を追加 */
+  z-index: 100;     /* 他の要素より前に表示 */
+}
+
+/* もしnavi内の検索ボックスやメニューが正しく表示されるように調整する場合 */
+.search_container.fixed,
+.hamburger-menu.fixed {
+  position: fixed;
+  top: 50px; /* 必要に応じて調整 */
+  z-index: 101;
+}

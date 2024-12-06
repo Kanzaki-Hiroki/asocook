@@ -9,7 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/box_menu.css">
+    <!-- <link rel="stylesheet" href="css/box_menu.css"> -->
     <!-- <link rel="stylesheet" href="css/style.scss"> -->
     <title>トップ</title>
 </head>
@@ -44,20 +44,21 @@ session_start();
     <footer></footer>
 
     <script>
-  // ページのスクロールを監視
-  window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function() {
+    var navi = document.querySelector('.navi'); // .navi要素を取得
     var searchBox = document.querySelector('.search_container');
     var hamburgerMenu = document.querySelector('.hamburger-menu');
 
-    // スクロール位置が200pxを超えた場合に固定
     if (window.scrollY > 200) {
-      searchBox.classList.add('fixed');  // 検索ボックスにfixedクラスを追加
-      hamburgerMenu.classList.add('fixed');  // ハンバーガーメニューにfixedクラスを追加
+        navi.classList.add('fixed'); // .naviにfixedクラスを追加
+        searchBox.classList.add('fixed');  // 検索ボックスにfixedクラスを追加
+        hamburgerMenu.classList.add('fixed');  // ハンバーガーメニューにfixedクラスを追加
     } else {
-      searchBox.classList.remove('fixed');  // スクロール位置が200px以下の場合、fixedクラスを削除
-      hamburgerMenu.classList.remove('fixed');  // 同様にハンバーガーメニューからも削除
+        navi.classList.remove('fixed'); // .naviからfixedクラスを削除
+        searchBox.classList.remove('fixed');
+        hamburgerMenu.classList.remove('fixed');
     }
-  });
+});
 </script>
 
 </body>
