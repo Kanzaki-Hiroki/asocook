@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['login_status'] = false;
 $pdo = new PDO('mysql:host=mysql309.phy.lolipop.lan;
 dbname=LAA1557221-aso2301382;charset=utf8',
 'LAA1557221',
