@@ -1,0 +1,88 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: white; /*添加漸變背景 */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 200px; /* 為了避開固定的 logo 容器 */
+    min-height: 100vh;
+}
+
+h2 {
+    color: #085078;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 表單容器 */
+.container {
+    width: 90%;
+    max-width: 400px;
+    background-color: #eff0e4; /* 提供簡潔的背景色 */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* 增加和 logo 的間距 */
+}
+
+/* 表單標籤與輸入框 */
+form p {
+    margin: 10px 0;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #47A2A6;
+    outline: none;
+}
+
+/* 提交按鈕樣式 */
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #085078;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 15px;
+}
+
+input[type="submit"]:hover {
+    background: #47A2A6;
+    transform: scale(1.05); /* 增加按鈕點擊的視覺回饋 */
+}
+
+/* 錯誤提示訊息 */
+.alert_message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* 新帳戶表單 */
+form:last-of-type {
+    margin-top: 15px;
+}
