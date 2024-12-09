@@ -26,7 +26,7 @@
         
             
 
-            $sql = 'select * from order where email=?';
+            $sql = 'select * from  where =email?';
 
             $stmt = $pdo->prepare($sql);
             $stmt->execute([$_POST['email']]);
@@ -36,10 +36,11 @@
 
             foreach ($stmt as $row){
                 echo '<tr>';
-                echo '<tr><td>日期</td><td>', $row[''],'</td></tr>';
-                echo '<tr><td>商品名</td><td>', $row[''], '</td></tr>';
-                echo '<tr><td>売価</td><td>', $row[''], '</td></tr>';
-                echo '<tr><td>在庫</td><td>', $row[''], '</td></tr>';
+                echo '<tr><td>日期</td><td>', $row['detail_id'],'</td></tr>';
+                echo '<tr><td>商品名</td><td>', $row['order_id'], '</td></tr>';
+                echo '<tr><td>売価</td><td>', $row['item_id'], '</td></tr>';
+                echo '<tr><td>在庫</td><td>', $row['quantity'], '</td></tr>';
+                echo '<tr><td>在庫</td><td>', $row['subtotal'], '</td></tr>';
                 // echo '<input type="hidden" name="url" value="', $row['url'], '">';
                 // echo '<input type="hidden" name="item_id" value="', $row['item_id'], '">'; 
                 // echo '<input type="hidden" name="', $row['item_name'], '">';
