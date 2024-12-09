@@ -16,8 +16,8 @@ session_start();
 <body>
 <header>
     <p class="logo">
-                <a href="top.php"><img src="img/logo.png" alt=""></a>
-            </p>
+        <a href="top.php"><img src="img/logo.png" alt=""></a>
+    </p>
     <div class="navi">
         <form method="post" action="search_results.php" class="search_container fixed">
             <input type="text" size="25" placeholder="キーワード検索" name="keyword">
@@ -78,7 +78,7 @@ session_start();
                     $result = $sql->fetchAll();
                     foreach ($result as $r) {
                         echo '<div class="cart-item">';
-                        echo "<div><img src=".$r['url']." ></div>";
+                        echo '<div><img src="./upload/item/'.$r['url'].'"></div>';
                         echo '<div>'.$r['item_name'].'<br>'.$r['hanbai_tanka'].'円</div>';  // 商品名と価格
                         echo '<form action="changeCartdata.php" method="post">';
                         echo '<select name="btn-',$r['item_id'],'" id="">'; //
@@ -134,7 +134,7 @@ session_start();
                     $result = $sql->fetchAll();
                     foreach ($result as $r) {
                         echo '<div class="cart-item">';
-                        echo "<div><img src=".$r['url']." ></div>";
+                        echo '<div><img src="./upload/item/'.$r['url'].'"></div>';
                         echo '<div>'.$r['item_name'].'<br>'.$r['hanbai_tanka'].'円</div>';  // 商品名と価格
                         echo '<form action="changeCartdata.php" method="post">';
                         echo '<select name="btn-',$r['item_id'],'" id="">'; //
@@ -186,6 +186,7 @@ session_start();
         <form action="search_results.php" method="post">
             <input type="submit" value="戻る">
         </form>
+        <br><br>
         <form action="login.html" method="post">
             <input type="submit" value="ログイン">
         </form>
@@ -193,5 +194,11 @@ session_start();
             <input type="submit" value="ログアウト">
         </form>
     <!-- <script src="./script/script.js"></script> -->
+    <style>
+        .cart-item img {
+            width: 100px;
+            height: auto;
+        }
+    </style>
 </body>
 </html>

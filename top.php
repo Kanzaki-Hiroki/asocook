@@ -21,8 +21,11 @@ session_start();
         <div class="navi">
             <form method="post" action="search_results.php" class="search_container fixed">
                 <input type="text" size="25" placeholder="キーワード検索" name="keyword">
-                <input type="submit" value="&#xf002">
+                <input type="submit" name="search" value="&#xf002">
             </form>
+            <div class="cart-icon">
+                <a href="view_cart.php"><img src="img/icon_cart.png" alt="" style="width: 40px;"></a>
+        </div>
             <div class="hamburger-menu">
                 <input id="menu__toggle" type="checkbox">
                 <label class="menu__btn" for="menu__toggle">
@@ -34,13 +37,16 @@ session_start();
             </div>
         </div>
     </header>
-    <p>
-        <img src="img/catchphrase.png" alt="">
-        <img src="img/ASO CooKa.png" alt="">
-        テスト用ボタン<br>
-    </p>
-    <form action="login.php"><input type="submit" value="ログイン"></form>
-    <form action="logout.php"><input type="submit" value="ログアウト"></form>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="img/catchphrase.png" alt="" >
+        </div>
+        <div style="text-align: center;">
+            <form action="search_results.php" method="post">
+                <input type="image" formmethod="get" src="img/recommendItem2.png" style="width: 720px; height: auto; border: 7px solid yellow;">
+                <!-- <img src="img/recommendItem.png"> -->
+            </form>
+        </div>
+        <!-- <img src="img/ASO CooKa.png" alt=""> -->
     <footer></footer>
 
     <script>

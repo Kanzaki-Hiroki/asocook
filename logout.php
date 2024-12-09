@@ -4,5 +4,5 @@
     session_destroy();
     setcookie('PHPSESSID','', time() - 3600,'/');
     $GLOBALS['login_status'] = false;
-    header("Location:login.html");
+    header("Location:login.php");
 ?>

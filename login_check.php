@@ -14,13 +14,20 @@ if(isset($_POST['pass'])){
     $pass = htmlspecialchars($_POST['pass']);
 }
 
-if(substr($id,0,2) === 'ID' && substr($id,-1,-2) === 'AD'){ //管理者IDか判定、管理者IDはある文字の組み合わせ
+
+
+$_SESSION['AD'] = substr($id,-2,2);
+
+
+
+if(substr($id,0,2) == 'ID' && substr($id,-2,2) == 'AD'){ //管理者IDか判定、管理者IDはある文字の組み合わせ
     $sql = $pdo->prepare('select * from admin where admin_id=? and admin_pass=?');
     $sql->execute([$_POST['log_id'],$_POST['pass']]);
-	if($user = $sql->fetch()){
-        foreach($user as $u){
-            $_SESSION['id'] = $u['admin_id'];
-            $_SESSION['pass'] = $u['admin_pass'];
+	if($admin = $sql->fetchAll()){
+        foreach($admin as $ad){
+            $_SESSION['id'] = $ad['admin_id'];
+            $_SESSION['pass'] = $ad['admin_pass'];
+            $_SESSION['admin_name'] = $ad['admin_name'];
             header('Location:administrator.php'); //管理者トップ画面に遷移
         }
     }else{ //未登録のID,pass ログイン画面でエラー表示
@@ -40,7 +47,7 @@ if(substr($id,0,2) === 'ID' && substr($id,-1,-2) === 'AD'){ //管理者IDか判�
             }
         }else{ //未登録のユーザーID/パスワード ログイン画面でエラー表示
             $_SESSION['login_status'] = false;
-            header('Location: login.html');
+            header('Location: login.php');
         }
     }
 ?>

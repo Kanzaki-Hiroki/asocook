@@ -9,9 +9,19 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login_style.css">
     <title>ログイン画面</title>
 </head>
 <body>
+
+
+<?php
+if(isset($_SESSION['AD'])){
+    echo 'AD:', $_SESSION['AD'];
+}
+?>
+
+
     <div id="account_form">
         <header>
             <div id="">
@@ -31,7 +41,7 @@ session_start();
             </p>
             <p><input type="submit" value="ログインする"></p>
         </form>
-        <form action="create_account.html" method="post">
+        <form class="to-cAccount" action="create_account.html" method="post">
             <input type="submit" value="新規登録はこちら">
         </form>
     </div>

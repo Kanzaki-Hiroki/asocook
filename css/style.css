@@ -31,6 +31,16 @@
   outline : none;
 }
 
+/**************************************************/
+/*カートアイコン*/
+.cart-icon {
+  position: absolute;
+  right: 60px;
+  top: 210px;
+}
+/**************************************************/
+
+
 /* チェックボックスを非表示にして、機能は残す */
 #menu__toggle {
   display: none; /* チェックボックスを非表示にして機能は残す */
@@ -62,7 +72,7 @@
 .menu__btn {
   position: absolute; /* 位置を固定し、ページをスクロールしても表示 */
   top: 40px;          /* ページ上部からの距離を調整 */
-  margin-top: 200px;  /* 下方向の余白を追加し、3本線の垂直位置を調整 */
+  margin-top: 190px;  /* システムロゴとの間隔を調整　下方向の余白を追加し、3本線の垂直位置を調整 */
   right: 20px;        /* ページ右側からの距離を調整 */
   width: 26px;        /* ボタンの幅を設定 */
   height: 26px;       /* ボタンの高さを設定 */
@@ -110,6 +120,7 @@
   background-color: #ffffff; /* メニューの背景色を設定 */
   box-shadow: 2px 2px 6px(0, 0, 0, 0); /* 影の効果を追加 */
   transition-duration: .25s; /* メニューがスライドイン・アウトするアニメーションの効果時間を設定 */
+  border:0.3px solid black;
 }
 
 /* メニュー項目のスタイル */
@@ -130,17 +141,13 @@
   background-color: #bbc0c2; /* ホバー時の背景色を設定 */
 }
 
-/*検索ボックスとメニューボタン*/
-/* .navi {
-  
-} */
-
+/**************************************************/
 /* システムロゴ */
 .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px auto;
+  margin: 20px auto 10px;
   margin-top: 0px;
   background-color: #fff85a;
 }
@@ -150,6 +157,8 @@
   height: auto;
   padding-right: 120px;
 }
+/**************************************************/
+
 
 .alert_message {
   color: red;

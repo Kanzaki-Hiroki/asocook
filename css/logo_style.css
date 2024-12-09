@@ -1,0 +1,39 @@
+/* Logo容器設定 */
+.logo-container {
+    width: 100%;
+    height: auto;
+    min-height: 150px;
+    background-color: #fff85a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 20px 0;
+    /* 在 logo 底部增加 margin，讓導航欄不會被擋住 */
+    margin-bottom: 80px; /* 或根據需要調整這個數值 */
+}
+
+/* Logo圖片設定 */
+.logo-container img {
+    width: 600px; /* 調整 logo 寬度至 600px，更適合多數裝置 */
+    max-width: 90%; /* 確保自適應寬度 */
+    height: auto; /* 保持高度比例 */
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background: white; /*添加漸變背景 */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 200px; /* 為了避開固定的 logo 容器 */
+    min-height: 100vh;
+}
