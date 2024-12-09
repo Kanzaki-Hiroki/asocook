@@ -13,8 +13,12 @@ if(isset($_POST['keyword'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+<<<<<<< HEAD
     <!-- <link rel="stylesheet" href="css/logo_style.css"> -->
     <link rel="stylesheet" href="css/search_results.css">
+=======
+    <link rel="stylesheet" href="css/search_re_style.css">
+>>>>>>> bae4ee4589756eafc6857ac6868961d8d3d8a6a0
     <title>検索結果</title>
 </head>
 <body>
