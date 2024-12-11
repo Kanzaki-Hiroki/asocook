@@ -1,0 +1,130 @@
+全局樣式
+body {
+    font-family: 'Arial', sans-serif;
+    background: white;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    /* padding-top: 200px; 為了避開固定的 logo 容器 */
+    min-height: 100vh;
+}
+
+h1 {
+    color: #085078;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 表單容器樣式 */
+#account_form {
+    width: 90%;
+    max-width: 500px;
+    background-color: #eff0e4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 表單輸入區域 */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+form textarea {
+    resize: none; /* 禁止手動調整大小 */
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="tel"]:focus,
+form textarea:focus {
+    border-color: #47A2A6;
+    outline: none;
+}
+
+/* 提交按鈕樣式 */
+form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #085078;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover:enabled {
+    background: #47A2A6;
+    transform: scale(1.05);
+}
+
+form input[type="submit"]:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* 返回按鈕 */
+a button {
+    width: 100%;
+    padding: 10px;
+    background: #cccccc;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+}
+
+a button:hover {
+    background: #b0b0b0;
+}
+
+/* 錯誤提示訊息 */
+.alert_message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    #account_form {
+        padding: 15px;
+    }
+
+    form input[type="submit"],
+    a button {
+        font-size: 14px;
+    }
+}

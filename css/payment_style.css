@@ -1,0 +1,97 @@
+/* payment_style.css */
+
+/* 表单容器样式 */
+form {
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    max-width: 400px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 700px;
+}
+
+/* 表单标题样式 */
+h1, h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* 输入框样式 */
+input[type="text"],
+input[type="month"] {
+    width: 95%;
+    padding: 10px;
+    margin-top: 15px;
+    margin: 10px 20px 10px 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* 按钮样式 */
+button[type="submit"] {
+    width: 90%;
+    padding: 10px;
+    margin-top: 15px;
+    /* margin: 10px 20px 10px 0px;
+    margin-right: 20px; */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+input[type="submit"] {
+    width: 96%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #d32f2f;
+}
+
+/* 标签样式 */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* 提示文字样式 */
+input::placeholder {
+    color: #aaa;
+}
+
+/* 表单内的按钮样式修复 */
+a button {
+    all: unset;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+/* 提示文字样式 */
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}

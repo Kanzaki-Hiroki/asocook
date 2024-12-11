@@ -20,6 +20,11 @@ if($existIdCheck){
 }else{
     array_push($_SESSION['cart'], [$_POST['item_id'],$_POST['amount']]);
 }
-header('Location: search_results.php');
+if(isset($_POST['result_all'])){
+    header('Location: search_results.php');
+}
+else if(isset($_POST['result_reco'])){
+    header('Location: recommend_result.php');
+}
 
 ?>

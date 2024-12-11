@@ -1,0 +1,101 @@
+/* カートアイテムの全体スタイル */
+.cart-item {
+    display: flex;
+    width: 500px; /* 固定幅 */
+    height: 150px; /* 固定高さ */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd; /* 灰色の枠線 */
+    border-radius: 8px; /* 角丸 */
+    background-color: #f9f9f9; /* 淺灰色の背景 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 軽い影の効果 */
+    overflow: hidden; /* 範囲を超えた内容を隠す */
+}
+
+/* 画像部分 */
+.cart-item img {
+    width: 120px; /* 固定画像幅 */
+    height: 120px; /* 固定画像高さ */
+    margin-right: 20px; /* 右マージン */
+    border-radius: 8px; /* 角丸画像 */
+}
+
+/* 商品名と価格 */
+.cart-item div {
+    flex-grow: 1; /* 残りのスペースを埋める */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 垂直方向に中央揃え */
+    font-size: 16px;
+    height: 100%; /* 商品名と価格のエリアを残りの高さに合わせる */
+}
+
+.cart-item div br {
+    margin: 5px 0;
+    color: #777; /* 改行部分の色 */
+}
+
+/* 数量選択部分 */
+.cart-item select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc; /* 灰色の枠線 */
+    border-radius: 4px; /* 角丸 */
+    margin-right: 10px; /* 右マージン */
+    height: 40px; /* 固定高さ */
+}
+
+/* 変更ボタン */
+.cart-item input[type="submit"] {
+    background-color: #4CAF50; /* 緑色の背景 */
+    color: white; /* 白い文字 */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* マウスオーバー時に手のひらアイコンを表示 */
+    font-size: 14px;
+    transition: background-color 0.3s ease; /* 背景色の遷移効果 */
+    height: 40px; /* 固定高さ */
+}
+
+.cart-item input[type="submit"]:hover {
+    background-color: #45a049; /* マウスオーバー時の背景色 */
+}
+
+/* 合計金額部分 */
+p {
+    font-size: 18px;
+    color: #333; /* 濃い灰色 */
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* カートが空または商品がない場合のメッセージ */
+p {
+    color: #f44336; /* 警告色（赤） */
+    font-size: 24px;
+}
+
+a {
+    color: #007BFF; /* 青色の文字 */
+    text-decoration: none; /* 下線なし */
+}
+
+a:hover {
+    text-decoration: underline; /* マウスオーバー時に下線を表示 */
+}
+
+/* 戻るボタン */
+form input[type="submit"] {
+    background-color: #007BFF; /* 青色の背景 */
+    color: white; /* 白い文字 */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* 角丸 */
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3; /* マウスオーバー時の背景色 */
+}

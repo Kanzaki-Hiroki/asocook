@@ -10,7 +10,6 @@ session_start();
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/box_menu.css"> -->
-    <!-- <link rel="stylesheet" href="css/style.scss"> -->
     <title>決済完了</title>
 </head>
 <body>
@@ -69,9 +68,9 @@ foreach($_SESSION['cart'] as $arr) {
     $sql->execute([ $o_id, $item_id, $quantity, $tanka*$quantity]);
     }
 
-echo '<h2>購入処理が完了しました</h2>';
+echo '<h2 style="text-align: center;">購入処理が完了しました！</h2>';
 ?>
-<form action="top.php">
+<form action="top.php" style="text-align:center;">
     <input type="submit" value="トップページに戻る">
 </form>
 </body>

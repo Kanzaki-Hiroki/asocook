@@ -41,12 +41,10 @@ session_start();
             <img src="img/catchphrase.png" alt="" >
         </div>
         <div style="text-align: center;">
-            <form action="search_results.php" method="post">
+            <form action="recommend_result.php" method="post">
                 <input type="image" formmethod="get" src="img/recommendItem2.png" style="width: 720px; height: auto; border: 7px solid yellow;">
-                <!-- <img src="img/recommendItem.png"> -->
             </form>
         </div>
-        <!-- <img src="img/ASO CooKa.png" alt=""> -->
     <footer></footer>
 
     <script>

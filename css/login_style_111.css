@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     /* padding-top: 200px; 為了避開固定的 logo 容器 */
+    /* padding-top: 200px; 為了避開固定的 logo 容器 */
     min-height: 100vh;
 }
 
@@ -34,6 +35,11 @@ h2 {
 /* 表單標籤與輸入框 */
 form p {
     margin: 10px 0;
+    text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+    width: 60%;
 }
 
 input[type="text"], input[type="password"] {
@@ -54,6 +60,7 @@ input[type="text"]:focus, input[type="password"]:focus {
 
 /* 提交按鈕樣式 */
 input[type="submit"] {
+    width: 30%;
     width: 100%;
     padding: 12px;
     background: #085078;
@@ -67,6 +74,9 @@ input[type="submit"] {
     margin-top: 15px;
 }
 
+.to-cAccount {
+    text-align: center;
+}
 input[type="submit"]:hover {
     background: #47A2A6;
     transform: scale(1.05); /* 增加按鈕點擊的視覺回饋 */
@@ -79,6 +89,7 @@ input[type="submit"]:hover {
     margin-top: 5px;
     display: block;
     font-weight: bold;
+    text-align: center;
     text-align: left;
 }
 

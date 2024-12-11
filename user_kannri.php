@@ -41,12 +41,12 @@
                 echo '<td>', $row['name'], '</td>';
                 echo '<td>', $row['email'], '</td>';
                 echo '<form action="rireki.php" method="post">';
-                echo '<td><input type="submit" value="履歴" name="rireki"></td>';
                 echo '<input type="hidden" name="email" value="', $row['email'], '">';
+                echo '<td><input type="submit" value="履歴" name="rireki"></td>';
                 echo '</form>';
                 echo '<form action="account_infor.php" method="post">';
-                echo '<td><input type="submit" value="詳細" name="syosai"></td>';
                 echo '<input type="hidden" name="name" value="', $row['name'], '">';
+                echo '<td><input type="submit" value="詳細" name="syosai"></td>';
                 echo '</form>';
                 echo '</tr>';
             }

@@ -59,7 +59,7 @@ $name = $lname . ' '. $fname;
 $datetime = date("Y-m-d H:i:s");
 $result = $sql->execute([$email, $name, $pass, $tel, $address, $datetime]);
 if($result){
-    header('Location: top.html');
+    header('Location: top.php');
 }
 $pdo = null;
 

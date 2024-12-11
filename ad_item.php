@@ -33,7 +33,7 @@
             foreach ($stmt as $row){
                 echo '<tr>';
                 echo '<td>', $row['item_id'], '</td>';
-                echo '<td><img src="upload/', $row['url'], '" width="100px"></td>';
+                echo '<td><img src="upload/item/', $row['url'], '" width="100px"></td>';
                 echo '<td>', $row['item_name'], '</td>';
                 echo '<td>', $row['hanbai_tanka'], '</td>';
                 echo '<td>', $row['stock'], '</td>';

@@ -10,12 +10,14 @@ session_start();
     <!-- jQueryの読み込み -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/logo_style.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/cart_style.css">
+    <title>カート</title>
 </head>
 <body>
 <header>
-    <p class="logo">
+    <p class="logo" style="background-color: #fff85a;">
         <a href="top.php"><img src="img/logo.png" alt=""></a>
     </p>
     <div class="navi">
@@ -105,7 +107,6 @@ session_start();
             echo '<a href="login.php">ログインはこちら</a>';
         }
 
-
         else if (isset($_SESSION['cart']) && isset($_SESSION['id'])) { // カート追加済&ログイン中
             foreach ($_SESSION['cart'] as $arr) {
                 //var_dump($arr);
@@ -172,33 +173,24 @@ session_start();
         if(isset($_SESSION['cart']) && !empty($_SESSION['cart']) && isset($_SESSION['id'])){ //ログイン中&カートに商品が入っている
             echo '
             <form action="payment.php" method="post">
-            <input type="submit" value="レジに進む">
+            <p><input type="submit" value="レジに進む"></p>
             </form>';
         }else if(!isset($_SESSION['id']) && !empty($_SESSION['cart'])){ //ログイン中&カートが空のときは押せない
             echo '
             <form action="payment.php" method="post">
-            <input type="submit" value="レジに進む" disabled>
+            <p><input type="submit" value="レジに進む" disabled></p>
             </form>';
         }
-
         ?>
-
         <form action="search_results.php" method="post">
             <input type="submit" value="戻る">
         </form>
-        <br><br>
-        <form action="login.html" method="post">
-            <input type="submit" value="ログイン">
-        </form>
-        <form action="logout.php" method="post">
-            <input type="submit" value="ログアウト">
-        </form>
     <!-- <script src="./script/script.js"></script> -->
-    <style>
+    <!-- <style>
         .cart-item img {
             width: 100px;
             height: auto;
         }
-    </style>
+    </style> -->
 </body>
 </html>

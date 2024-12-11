@@ -34,6 +34,22 @@ body {
     align-items: center;
     margin: 0;
     padding: 0;
-    padding-top: 200px; /* 為了避開固定的 logo 容器 */
+    /* padding-top: 200px; 為了避開固定的 logo 容器 */
     min-height: 100vh;
 }
+
+/* システムロゴ */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 10px;
+    margin-top: 0px;
+    background-color: #fff85a;
+  }
+  .logo img{
+    /* width: 100%; */
+    max-width: 1000px;
+    height: auto;
+    padding-right: 120px;
+  }

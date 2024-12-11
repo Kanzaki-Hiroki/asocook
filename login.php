@@ -9,27 +9,17 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="logo_style.css">
     <link rel="stylesheet" href="css/login_style.css">
     <title>ログイン画面</title>
 </head>
 <body>
-
-
-<?php
-if(isset($_SESSION['AD'])){
-    echo 'AD:', $_SESSION['AD'];
-}
-?>
-
-
-    <div id="account_form">
-        <header>
-            <div id="">
-                <p class="logo">
-                    <a href="top.php"><img src="img/logo.png" alt=""></a>
-                </p>
-            </div>
-        </header>
+<header style="width: 100%;">
+    <div class="logo" id="" style="background-color: #fff85a;">
+            <a href="top.php"><img src="img/logo.png" alt=""></a>
+    </div>
+</header>
+    <div id="account_form" style="box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px; padding: 0px 50px 30px 50px; margin-top: 30px; border-radius: 15px;">
         <h2>ログイン</h2>
         <form action="login_check.php" method="post">
             <p>メールアドレス <br>

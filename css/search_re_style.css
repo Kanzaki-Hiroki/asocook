@@ -103,3 +103,17 @@ footer {
 .cart-button:hover {
     background-color: #0077a1;
 }
+
+
+/*---------------------------------------------*/
+.result-item p {
+    text-align: center;
+}
+
+.result-item form {
+    align-items: center;
+}
+
+.result-item .item-img {
+    text-align: center;
+}

@@ -60,17 +60,16 @@ if(isset($_POST['keyword'])){
     //     $sql->execute(['秋%']);
     //     $results = $sql->fetchAll();
     // }
-//検索ボックスからの商品検索
-        $sql = $pdo->prepare('SELECT * FROM item WHERE item_name LIKE ? or tag LIKE ?'); //商品名orタグに部分一致するように検索
-        $sql->execute(['%' . $_SESSION['key'] . '%', '%' . $_SESSION['key'] . '%']);
+
+
+        $sql = $pdo->prepare('SELECT * FROM item WHERE tag LIKE ?');
+        $sql->execute(['秋%']);
         $results = $sql->fetchAll();
-
-
 
     if (!empty($results)) {
         foreach ($results as $result) {
             echo '<div class="result-item">';
-            
+
             echo '<div class="item-img">';
             echo '<img src="upload/item/',$result['url'],'" alt="" style="width: 100px; height: auto;">';
             echo '</div>';
@@ -82,7 +81,7 @@ if(isset($_POST['keyword'])){
             echo '<label for="amount-' . htmlspecialchars($result['item_id']) . '">数量:</label>';
             echo '<input type="text" id="amount-' . htmlspecialchars($result['item_id']) . '" size="2" name="amount" value="1" min="1" max="99">';
             echo '<input type="submit" value="カートに追加">';
-            echo '<input type="hidden" name="result_all">';
+            echo '<input type="hidden" name="result_reco">';
             echo '</form>';
             echo '</div>';
         }
