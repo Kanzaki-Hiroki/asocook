@@ -19,7 +19,7 @@ session_start();
             <a href="top.php"><img src="img/logo.png" alt=""></a>
     </div>
 </header>
-    <div id="account_form" style="box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px; padding: 0px 50px 30px 50px; margin-top: 30px; border-radius: 15px;">
+    <div id="account_form" style="box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px; padding: 0px 50px 30px 50px; margin-top: 30px; border-radius: 15px; width: 300px;">
         <h2>ログイン</h2>
         <form action="login_check.php" method="post">
             <p>メールアドレス <br>

@@ -16,10 +16,11 @@ session_start();
     <title>カート</title>
 </head>
 <body>
-<header>
-    <p class="logo" style="background-color: #fff85a;">
-        <a href="top.php"><img src="img/logo.png" alt=""></a>
-    </p>
+<header style="width: 100%;">
+    <div class="logo" id="" style="background-color: #fff85a;">
+            <a href="top.php"><img src="img/logo.png" alt=""></a>
+    </div>
+<!-- </header> -->
     <div class="navi">
         <form method="post" action="search_results.php" class="search_container fixed">
             <input type="text" size="25" placeholder="キーワード検索" name="keyword">

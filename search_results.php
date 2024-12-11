@@ -61,6 +61,9 @@ if(isset($_POST['keyword'])){
     //     $results = $sql->fetchAll();
     // }
 //検索ボックスからの商品検索
+        if(!isset($_SESSION['key'])){
+            $_SESSION['key'] = '';
+        }
         $sql = $pdo->prepare('SELECT * FROM item WHERE item_name LIKE ? or tag LIKE ?'); //商品名orタグに部分一致するように検索
         $sql->execute(['%' . $_SESSION['key'] . '%', '%' . $_SESSION['key'] . '%']);
         $results = $sql->fetchAll();

@@ -12,12 +12,12 @@
             <img src="img/logo.png" alt="システムロゴ">
         </div>
         <div class="icon">
-            <img src="img/icon.png" alt="管理者アイコン">
+        <img src="img/icon_user.png" alt="管理者アイコン" style="width: 50px;">
             <span>ログイン中</span>
         </div>
         <a href=""><button class="logout_button">ログアウト</button></a>
     </div>
-    <h1>商品変更</h1>
+    <h1 style="text-align: center;">商品変更</h1>
     <?php
         $pdo = new PDO('mysql:host=mysql309.phy.lolipop.lan;
         dbname=LAA1557221-aso2301382;charset=utf8',
@@ -31,13 +31,13 @@
             $stmt = $pdo->prepare($sql);
             $stmt->execute([$_POST['item_id']]);
 
-            echo '<table border = "|">';
+            echo '<table border = "|" style="margin: auto;">';
 
 
             foreach ($stmt as $row){
                 echo '<form action="change_item_db.php" method="post" style="display:inline" enctype="multipart/form-data">';
                 echo '<tr>';
-                echo '<tr><td>画像</td><td><img src="upload/', $row['url'], '" width = "100px"></td></tr>';
+                echo '<tr><td>画像</td><td><img src="upload/item/', $row['url'], '" width = "100px"></td></tr>';
                 echo '<tr><td>変更画像</td><td><input type="file" name="url"></td></tr>';
                 echo '<tr><td>商品名</td><td><input type="text" name="item_name" value="', $row['item_name'], '"></td></tr>';
                 echo '<tr><td>売価</td><td><input type="text" name="hanbai_tanka" value="', $row['hanbai_tanka'], '"></td></tr>';
@@ -49,7 +49,7 @@
                 echo '<input type="hidden" name="', $row['item_name'], '">';
                 echo '<input type="hidden" name="', $row['hanbai_tanka'], '">';
                 echo '<input type="hidden" name="', $row['stock'], '">';
-                echo '<input type="submit" value="変更する">';
+                echo '<div style="text-align: center; margin-top: 10px;"><input type="submit" value="変更する">';
                 echo '</form>';
                 echo '</tr>';
             }
@@ -57,7 +57,7 @@
         $pdo = null;
     ?>
     
-    <a href="ad_item.php"><button>戻る</button></a>
+    <a href="ad_item.php"><button>戻る</button></a></div>
     <!-- <a href="change_item_db.php"><button>変更する</button></a> -->
 </body>
 </html>

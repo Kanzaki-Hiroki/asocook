@@ -12,7 +12,7 @@
             <img src="img/logo.png" alt="システムロゴ">
         </div>
         <div class="icon">
-            <img src="img/icon.png" alt="管理者アイコン">
+        <img src="img/icon_user.png" alt="管理者アイコン" style="width: 50px;">
             <span>ログイン中</span>
         </div>
         <a href=""><button class="logout_button">ログアウト</button></a>
@@ -38,10 +38,15 @@
                 echo '<tr>';
                 echo '<tr><td>ユーザー名</td><td>', $row['name'],'</td></tr>';
                 echo '<tr><td>メールアドレス</td><td>', $row['email'],'</td></tr>';
-                echo '<tr><td>パスワード</td><td>', $row['user_pass'],'</td></tr>';
-                echo '<tr><td>住所</td><td>', $row['address'], '</td></tr>';
+                echo '<tr><td>パスワード</td><td>';
+                // $count = ;
+                for($i = 0; $i < mb_strlen((string)$row['user_pass']); $i++){
+                    echo '*';
+                }
+                '</td></tr>';
+                echo '<tr><td>住所</td><td>',$row['address'],'</td></tr>';
                 echo '<input type="hidden" name="', $row['name'], '">';
-                echo '<input type="hidden" name="', $row['email'], '">'; 
+                echo '<input type="hidden" name="', $row['email'], '">';
                 echo '<input type="hidden" name="', $row['user_pass'], '">';
                 echo '<input type="hidden" name="', $row['address'], '">';
                 echo '</form>';

@@ -13,10 +13,10 @@
             <img src="img/logo.png" alt="システムロゴ">
         </div>
         <div class="icon">
-            <img src="img/icon.png" alt="管理者アイコン">
+            <img src="img/icon_user.png" alt="管理者アイコン">
             <span>ログイン中</span>
         </div>
-        <a href=""><button class="logout_button">ログアウト</button></a>
+        <a href="logout.php"><button class="logout_button">ログアウト</button></a>
     </div>
     <h1>ユーザー管理</h1>
     <?php
@@ -24,8 +24,6 @@
         dbname=LAA1557221-aso2301382;charset=utf8',
         'LAA1557221',
         'aso12345');
-        
-            
 
             $sql = 'select * from user';
 
@@ -36,10 +34,10 @@
             echo '<tr><th>ユーザー名</th><th>メールアドレス</th><th>注文</th><th>情報</th></tr>';
 
             foreach ($stmt as $row){
-                
                 echo '<tr>';
                 echo '<td>', $row['name'], '</td>';
                 echo '<td>', $row['email'], '</td>';
+                // $_SESSION['email'] = $row['email'];
                 echo '<form action="rireki.php" method="post">';
                 echo '<input type="hidden" name="email" value="', $row['email'], '">';
                 echo '<td><input type="submit" value="履歴" name="rireki"></td>';

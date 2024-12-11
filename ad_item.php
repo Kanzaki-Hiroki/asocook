@@ -13,7 +13,7 @@
                 <img src="./img/logo.png" alt="システムロゴ">
             </div>
             <div class="icon">
-                <img src="./img/icon.png" alt="管理者アイコン">
+            <img src="img/icon_user.png" alt="管理者アイコン" style="width: 50px;">
                 <span>ログイン中</span>
             </div>
             <a href=""><button class="logout_button">ログアウト</button></a>

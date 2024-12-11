@@ -9,9 +9,19 @@
 
 </head>
 <body>
+<div class="header">
     <div class="logo">
         <img src="img/logo.png" alt="システムロゴ">
     </div>
+    <div class="icon">
+        <img src="img/icon.png" alt="管理者アイコン">
+        <span>ログイン中</span>
+    </div>
+    <a href="logout.php"><button class="logout_button">ログアウト</button></a>
+</div>
+    <!-- <div class="logo">
+        <img src="img/logo.png" alt="システムロゴ">
+    </div> -->
     <br><br><br><br>
     <div class="content" onclick="window.location.href='ad_item.php'">商品管理</div>
     <br><br><br><br>
