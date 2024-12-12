@@ -16,7 +16,7 @@
                 <img src="./img/icon.png" alt="管理者アイコン">
                 <span>ログイン中</span>
             </div>
-            <a href=""><button class="logout_button">ログアウト</button></a>
+            <a href="logout.php"><button class="logout_button">ログアウト</button></a>
         </div>
         <h1>商品検索</h1>
         <?php
