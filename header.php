@@ -16,9 +16,9 @@ if(isset($_SESSION['login_status']) && $_SESSION['login_status'] == true){//ロ�
 
         <div class="user-icon"><img src="img/icon_user.png" alt="" height="60px" width="auto"></div>
         <li><a class="menu__item" href="top.php">トップ</a></li>
-        <li><a class="menu__item" href="mypage.php">マイページ</a></li>
+        <li><a class="menu__item" href="https://aso2301393.deca.jp/ASOCOOK/mypage.php">マイページ</a></li>
         <li><a class="menu__item" href="logout.php">ログアウト</a></li>
-    ';
+    '; //<li><a class="menu__item" href="https://aso2301382lovepop.jp/Aso/aso_kanzaki/mypage.php">マイページ</a></li>
 }else{
     echo '
         <li><a class="menu__item" href="top.php">トップ</a></li>

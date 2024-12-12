@@ -6,6 +6,8 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../aso_kanzaki/css/style.css"> -->
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,32 +16,41 @@ session_start();
 dbname=LAA1557221-aso2301382;charset=utf8',
 'LAA1557221',
 'aso12345');
-
-// foreach($pdo->query('select * from user where email = aaaaaa.s.asojuku.ac.jp, user_pass = ssssss') as $row){
-//     echo $row['email'], '<br>';
-//     echo $row['user_pass'];
-// }
 ?>
-    <link rel="stylesheet" href="../aso_kanzaki/css/style.css">
-    
-    <p class="logo">
-        <img src="img/logo.png" alt="システムロゴ">
-    </p>
 
-    <div class=page>
-         <h1>マイページ</h1>
+<header style="width: 100%;">
+    <div class="logo" id="" style="background-color: #fff85a;">
+            <a href="top.php"><img src="img/logo.png" alt=""></a>
     </div>
-
-    <div class="mypagegazo">
+<!-- </header> -->
+    <div class="navi">
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox">
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+            <ul class="menu__box">
+                <?php include_once('header.php'); ?>
+            </ul>
+        </div>
+    </div>
+</header>
+    <!-- <div class="mypagegazo">
         <img src="img/mypage.png" alt="mypagegazo">
+    </div> -->
+    <div class=page>
+        <h1>マイページ</h1>
     </div>
 
-    <h2 class="user-name"><?= $_SESSION['user_name'] ?>様</h2>
-
+<?php
+$sql =$pdo->prepare("select * from user where email = ?");
+?>
+    <h2 class="user-name"><?= $_SESSION['user_name'] ?> 様</h2>
     <div>
-     href="#"><button class="mypage-button">注文履歴</button>
-     href="#"><button class="mypage-button">アカウント情報</button>
-    </div>
-
+    <a href="order_history.php"><button class="mypage-button">注文履歴</button></a>
+    <a href="user_accountInfo.php"><button class="mypage-button">アカウント情報</button></a>
+    <!-- <a href="order_history.php"><button class="mypage-button">注文履歴</button></a>
+    <a href="akannto.php"><button class="mypage-button">アカウント情報</button></a> -->
+</div>
 </body>
 </html>
